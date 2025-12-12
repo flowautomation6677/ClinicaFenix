@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="overflow-x: hidden; width: 100%; max-width: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Especialidades médicas da Clínica Fenix. Atendimento com profissionais qualificados em diversas áreas da medicina.">
+    <meta name="keywords" content="especialidades médicas, clínico geral, cardiologia, pediatria, ginecologia, ortopedia">
+    <title>Especialidades Médicas - Clínica Fenix</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="icon" type="image/png" href="img/LogoClinicaFenix.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/LogoClinicaFenix.png" alt="Clínica Fenix">
+            </a>
+            
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="especialidades.html" class="nav-link active">Especialidades</a>
+                <a href="medicina-ocupacional.html" class="nav-link">Medicina Ocupacional</a>
+                <a href="exames.html" class="nav-link">Exames</a>
+                <a href="convenios.html" class="nav-link">Convênios</a>
+                <a href="clinicas-conveniadas.html" class="nav-link">Clínicas</a>
+                <a href="contato.html" class="nav-link">Contato</a>
+                <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta</a>
+            </nav>
+            
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- Página de Especialidades -->
+    <section class="especialidades-page">
+        <div class="container">
+            <div class="page-header" data-aos="fade-up">
+                <h1>Especialidades Médicas</h1>
+                <p>Atendimento com profissionais qualificados e experientes em diversas áreas da medicina para cuidar da sua saúde com excelência</p>
+            </div>
+            
+            <div class="search-filter" data-aos="fade-up">
+                <input type="text" id="searchEspecialidade" placeholder="Buscar especialidade..." />
+            </div>
+            
+            <div class="especialidades-list" id="especialidadesList">
+                <!-- Clínico Geral -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="icon-wrapper"><i class="fas fa-stethoscope"></i></div>
+                    <h3>Clínico Geral</h3>
+                    <p>Atendimento médico geral para diagnóstico, prevenção e tratamento de diversas condições de saúde.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Cardiologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-wrapper"><i class="fas fa-heart"></i></div>
+                    <h3>Cardiologia</h3>
+                    <p>Cuidados especializados para o coração e sistema cardiovascular, prevenindo e tratando doenças cardíacas.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Pediatria -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="icon-wrapper"><i class="fas fa-child"></i></div>
+                    <h3>Pediatria</h3>
+                    <p>Atendimento especializado para crianças e adolescentes, acompanhando o desenvolvimento e saúde infantil.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Ginecologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-wrapper"><i class="fas fa-female"></i></div>
+                    <h3>Ginecologia</h3>
+                    <p>Cuidados com a saúde da mulher, incluindo prevenção, diagnóstico e tratamento de condições ginecológicas.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Ortopedia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="icon-wrapper"><i class="fas fa-bone"></i></div>
+                    <h3>Ortopedia</h3>
+                    <p>Tratamento de problemas relacionados ao sistema musculoesquelético, ossos, articulações e músculos.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Neurologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-wrapper"><i class="fas fa-brain"></i></div>
+                    <h3>Neurologia</h3>
+                    <p>Diagnóstico e tratamento de doenças do sistema nervoso central e periférico.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Otorrinolaringologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="350">
+                    <div class="icon-wrapper"><i class="fas fa-tint"></i></div>
+                    <h3>Otorrinolaringologia</h3>
+                    <p>Tratamento de doenças relacionadas a ouvido, nariz e garganta.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Endocrinologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-wrapper"><i class="fas fa-syringe"></i></div>
+                    <h3>Endocrinologia</h3>
+                    <p>Cuidados com o sistema endócrino, hormônios, diabetes, tireoide e metabolismo.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Dermatologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="450">
+                    <div class="icon-wrapper"><i class="fas fa-hand-holding-water"></i></div>
+                    <h3>Dermatologia</h3>
+                    <p>Diagnóstico e tratamento de doenças da pele, cabelos e unhas.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Gastroenterologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon-wrapper"><i class="fas fa-tint"></i></div>
+                    <h3>Gastroenterologia</h3>
+                    <p>Tratamento de doenças do sistema digestivo, estômago, intestino e fígado.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Urologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="550">
+                    <div class="icon-wrapper"><i class="fas fa-male"></i></div>
+                    <h3>Urologia</h3>
+                    <p>Cuidados com o sistema urinário e órgãos reprodutores masculinos.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Psiquiatria -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon-wrapper"><i class="fas fa-brain"></i></div>
+                    <h3>Psiquiatria</h3>
+                    <p>Diagnóstico e tratamento de transtornos mentais e emocionais.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Psicologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="650">
+                    <div class="icon-wrapper"><i class="fas fa-comments"></i></div>
+                    <h3>Psicologia</h3>
+                    <p>Atendimento psicológico para bem-estar emocional e saúde mental.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Angiologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="700">
+                    <div class="icon-wrapper"><i class="fas fa-tint"></i></div>
+                    <h3>Angiologia</h3>
+                    <p>Tratamento de doenças vasculares, veias e circulação sanguínea.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                <!-- Reumatologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="750">
+                    <div class="icon-wrapper"><i class="fas fa-joint"></i></div>
+                    <h3>Reumatologia</h3>
+                    <p>Diagnóstico e tratamento de doenças reumáticas e autoimunes.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+                
+                
+
+                
+                
+
+                
+                <!-- Proctologia -->
+                <div class="especialidade-item" data-aos="fade-up" data-aos-delay="900">
+                    <div class="icon-wrapper"><i class="fas fa-hospital-alt"></i></div>
+                    <h3>Proctologia</h3>
+                    <p>Tratamento de doenças do intestino grosso, reto e ânus.</p>
+                    <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta (WhatsApp)</a>
+                </div>
+            </div>
+            
+            <div class="clinicas-info" data-aos="fade-up">
+                <h2>Atendimento em Diversas Localidades</h2>
+                <p>Nossas especialidades estão disponíveis em nossa matriz e em clínicas conveniadas em toda a região metropolitana do Rio de Janeiro.</p>
+                <a href="clinicas-conveniadas.html" class="btn">Ver Clínicas Conveniadas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-logo">
+                    <img src="img/logonegativa.png" alt="Clínica Fenix">
+                    <p>Cuidando da sua saúde com excelência e humanização.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/clinicafenix" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/clinicafenixsaude" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521991685938" target="_blank" aria-label="WhatsApp Atendimento PF"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="especialidades.html">Especialidades</a></li>
+                        <li><a href="medicina-ocupacional.html">Medicina Ocupacional</a></li>
+                        <li><a href="exames.html">Exames</a></li>
+                        <li><a href="convenios.html">Convênios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li><a href="clinicas-conveniadas.html">Clínicas Conveniadas</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua João Fernandes Neto - Centro, Belford Roxo, 984</p>
+                    <p><i class="fas fa-phone"></i> Telefone Fixo: (21) 3582-2115</p>
+                            <p><i class="fab fa-whatsapp"></i> Atendimento PF: (21) 96950-1839</p>
+                            <p><i class="fab fa-whatsapp"></i> Atendimento PJ: (21) 96826-8160</p>
+                            <p><i class="fab fa-whatsapp"></i> Segurança do Trabalho: (21) 97359-5484</p>
+                            <p><i class="fab fa-whatsapp"></i> Comercial PJ: (21) 99168-5938</p>
+                    <p><i class="fas fa-envelope"></i> contato@clinicafenix.com.br</p>
+                    <p>🕒 Seg - Sex: 7:30h às 18h<br>Sáb: 7:30h às 18h</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clínica Fenix. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">LGPD</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5521991685938" class="whatsapp-float" target="_blank" aria-label="WhatsApp Atendimento PF">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

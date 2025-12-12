@@ -1,0 +1,151 @@
+// ========================================
+// PÁGINA DE EXAMES
+// ========================================
+
+.exames-page {
+  @include section;
+  background: $secondary-color;
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    
+    h1 {
+      @include section-title;
+      color: $primary-color;
+    }
+    
+    p {
+      @include section-subtitle;
+    }
+  }
+  
+  .search-bar {
+    max-width: 700px;
+    margin: 0 auto $spacing-2xl;
+    position: relative;
+    
+    input {
+      width: 100%;
+      padding: $spacing-md $spacing-lg;
+      padding-right: 50px;
+      border: 2px solid $border-color;
+      border-radius: $radius-md;
+      font-size: $font-size-base;
+      transition: all $transition-fast;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+      }
+    }
+    
+    .search-icon {
+      position: absolute;
+      right: $spacing-md;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $text-light;
+      font-size: $font-size-xl;
+    }
+  }
+  
+  .exames-categoria {
+    margin-bottom: $spacing-3xl;
+    
+    h2 {
+      color: $primary-color;
+      margin-bottom: $spacing-lg;
+      padding-bottom: $spacing-sm;
+      border-bottom: 3px solid $primary-color;
+      display: inline-block;
+    }
+    
+    .exames-grid {
+      @include grid(4, $spacing-md);
+      margin-top: $spacing-lg;
+    }
+    
+    .exame-card {
+      background: $bg-light;
+      padding: $spacing-md;
+      border-radius: $radius-md;
+      text-align: center;
+      transition: all $transition-base;
+      cursor: pointer;
+      border: 2px solid transparent;
+      
+      &:hover {
+        background: $primary-color;
+        color: $text-white;
+        transform: translateY(-5px);
+        box-shadow: $shadow-lg;
+        border-color: $primary-color;
+      }
+      
+      .icon {
+        font-size: $font-size-2xl;
+        margin-bottom: $spacing-xs;
+      }
+      
+      h4 {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+  
+  .info-box {
+    background: $bg-light;
+    padding: $spacing-xl;
+    border-radius: $radius-lg;
+    border-left: 4px solid $primary-color;
+    margin-top: $spacing-2xl;
+    
+    h3 {
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      color: $text-light;
+      line-height: 1.8;
+      margin-bottom: $spacing-md;
+    }
+    
+    .btn {
+      @include button-primary;
+    }
+  }
+  
+  .cta-exames {
+    text-align: center;
+    margin-top: $spacing-3xl;
+    padding: $spacing-2xl;
+    background: $gradient-primary;
+    border-radius: $radius-xl;
+    color: $text-white;
+    
+    h2 {
+      color: $text-white;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-xl;
+      opacity: 0.95;
+    }
+    
+    .btn {
+      @include button-base;
+      background: $secondary-color;
+      color: $primary-color;
+      
+      &:hover {
+        background: darken($secondary-color, 5%);
+      }
+    }
+  }
+}

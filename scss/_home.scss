@@ -1,0 +1,702 @@
+// ========================================
+// HOME PAGE
+// ========================================
+
+// Seção 1 - Hero/Banner Principal com Layout de Duas Colunas
+.s-1 {
+  @include section;
+  min-height: 600px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+  padding: $spacing-3xl 0;
+  display: flex;
+  align-items: center;
+  
+  .container {
+    width: 100%;
+  }
+  
+  .hero-content {
+    @include flex(row, center, space-between);
+    gap: $spacing-3xl;
+    
+    @include responsive(lg) {
+      flex-direction: column;
+      gap: $spacing-2xl;
+    }
+    
+    .hero-text, .hero-image {
+      width: 100%;
+    }
+  }
+  
+  .hero-text {
+    flex: 1;
+    
+    h1 {
+      font-size: $font-size-5xl;
+      font-weight: $font-weight-bold;
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+      line-height: 1.2;
+      
+      @include responsive(lg) {
+        font-size: $font-size-4xl;
+      }
+      
+      @include responsive(md) {
+        font-size: $font-size-3xl;
+      }
+    }
+    
+    > p {
+      font-size: $font-size-lg;
+      color: $text-light;
+      margin-bottom: $spacing-2xl;
+      line-height: 1.8;
+      
+      @include responsive(md) {
+        font-size: $font-size-base;
+      }
+    }
+  }
+  
+  .hero-stats {
+    @include flex(row, center, flex-start);
+    gap: $spacing-2xl;
+    margin-bottom: $spacing-2xl;
+    
+    @include responsive(md) {
+      flex-wrap: wrap;
+      gap: $spacing-lg;
+    }
+    
+    .stat-item {
+      @include flex(column, center, center);
+      
+      .stat-number {
+        font-size: $font-size-3xl;
+        font-weight: $font-weight-bold;
+        color: $primary-color;
+        display: block;
+        
+        @include responsive(md) {
+          font-size: $font-size-2xl;
+        }
+      }
+      
+      .stat-label {
+        font-size: $font-size-sm;
+        color: $text-light;
+        margin-top: $spacing-xs;
+        text-align: center;
+      }
+    }
+  }
+  
+  .hero-buttons {
+    @include flex(row, center, flex-start);
+    gap: $spacing-md;
+    
+    @include responsive(md) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .btn {
+      @include button-primary;
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-sm;
+      
+      i {
+        font-size: $font-size-lg;
+      }
+      
+      @include responsive(md) {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
+    .btn-secondary {
+      @include button-secondary;
+    }
+  }
+  
+  .hero-image {
+    flex: 1;
+    flex-basis: 50%;
+    
+    @include responsive(lg) {
+      width: 100%;
+    }
+    
+    .image-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: $radius-xl;
+      overflow: hidden;
+      box-shadow: $shadow-xl;
+      
+      @include responsive(md) {
+        aspect-ratio: 16 / 9;
+      }
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      animation: kenBurnsZoom 10s ease-in-out infinite;
+      
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Animação Ken Burns (Zoom suave)
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// ========================================
+// SEÇÃO 2 - SOBRE A CLÍNICA
+// ========================================
+
+.s-2 {
+  @include section;
+  background: $secondary-color;
+  
+  .about-content {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    
+    h2 {
+      @include section-title;
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      @include section-subtitle;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .about-cards {
+    @include grid(3, $spacing-lg);
+    
+    @include responsive(md) {
+      @include grid(1, $spacing-lg);
+    }
+  }
+  
+  .about-card {
+    background: $bg-light;
+    padding: $spacing-xl;
+    border-radius: $radius-lg;
+    text-align: center;
+    transition: all $transition-base;
+    border: 2px solid transparent;
+    
+    &:hover {
+      background: $primary-color;
+      color: $text-white;
+      transform: translateY(-10px);
+      box-shadow: $shadow-lg;
+      border-color: $primary-color;
+      
+      .icon {
+        color: $text-white;
+      }
+    }
+    
+    .icon {
+      font-size: $font-size-4xl;
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+      transition: all $transition-base;
+    }
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-sm;
+      color: inherit;
+    }
+    
+    p {
+      font-size: $font-size-sm;
+      color: inherit;
+      line-height: 1.6;
+    }
+  }
+}
+
+// ========================================
+// SEÇÃO 3 - HISTÓRIA, MISSÃO, VISÃO E VALORES
+// ========================================
+
+.s-3 {
+  @include section;
+  background: $bg-light;
+  
+  .mvv-grid {
+    @include grid(3, $spacing-lg);
+    
+    @include responsive(lg) {
+      @include grid(2, $spacing-lg);
+    }
+    
+    @include responsive(md) {
+      @include grid(1, $spacing-lg);
+    }
+  }
+  
+  .mvv-item {
+    background: $text-white;
+    padding: $spacing-xl;
+    border-radius: $radius-lg;
+    border: 1px solid $border-color;
+    transition: all $transition-base;
+    
+    &:hover {
+      border-color: $primary-color;
+      box-shadow: $shadow-md;
+    }
+    
+    h3 {
+      @include flex(row, center, flex-start);
+      gap: $spacing-sm;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semibold;
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+      
+      i {
+        font-size: $font-size-xl;
+        color: $primary-color;
+        border-left: 3px solid $primary-color;
+        padding-left: $spacing-sm;
+      }
+    }
+    
+    p {
+      font-size: $font-size-sm;
+      color: $text-light;
+      line-height: 1.6;
+    }
+  }
+}
+
+// ========================================
+// SEÇÃO 4 - ESPECIALIDADES EM DESTAQUE
+// ========================================
+
+.s-4 {
+  @include section;
+  background: $bg-light;
+  
+  .especialidades-grid {
+    @include grid(4, $spacing-lg);
+    max-width: 900px;
+    margin: $spacing-3xl auto 0;
+    
+    @include responsive(lg) {
+      @include grid(3, $spacing-lg);
+    }
+    
+    @include responsive(md) {
+      @include grid(2, $spacing-lg);
+    }
+  }
+  
+  .especialidade-card {
+    background: $text-white;
+    padding: $spacing-xl $spacing-md;
+    border-radius: $radius-lg;
+    text-align: center;
+    transition: all $transition-base;
+    box-shadow: $shadow-sm;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-md;
+    }
+    
+    .icon {
+      width: 60px;
+      height: 60px;
+      background: $primary-color;
+      border-radius: 50%;
+      @include flex(row, center, center);
+      margin: 0 auto $spacing-md;
+      color: $text-white;
+      font-size: $font-size-xl;
+      
+      i {
+        font-size: $font-size-xl;
+      }
+    }
+    
+    h4 {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $text-dark;
+    }
+  }
+}
+
+// ========================================
+// SEÇÃO 5 - MEDICINA OCUPACIONAL
+// ========================================
+
+.s-5 {
+  @include section;
+  background: $primary-color;
+  color: $text-white;
+  
+  .ocupacional-content {
+    @include flex(row, flex-start, space-between);
+    gap: $spacing-3xl;
+    
+    @include responsive(lg) {
+      flex-direction: column;
+    }
+  }
+  
+  .ocupacional-text {
+    flex: 1;
+    max-width: 500px;
+    
+    h2 {
+      @include section-title;
+      color: $text-white;
+      font-size: $font-size-4xl;
+      line-height: 1.2;
+      margin-bottom: $spacing-lg;
+      
+      @include responsive(md) {
+        font-size: $font-size-3xl;
+      }
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      line-height: 1.6;
+      margin-bottom: $spacing-2xl;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      @include button-base;
+      background: $text-white;
+      color: $primary-color;
+      font-weight: $font-weight-bold;
+      
+      &:hover {
+        background: $secondary-color;
+        color: $text-dark;
+      }
+    }
+  }
+  
+  .ocupacional-services {
+    flex: 1;
+    
+    .service-list {
+      @include grid(2, $spacing-md);
+      
+      @include responsive(md) {
+        @include grid(1, $spacing-md);
+      }
+    }
+    
+    .service-item {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: $spacing-md;
+      border-radius: $radius-md;
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      transition: all $transition-base;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      
+      &::before {
+        content: '\f00c'; // Font Awesome check icon
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: $spacing-sm;
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+
+
+// ========================================
+// SEÇÃO 6 - CLUBE DE BENEFÍCIOS (PLANO)
+// ========================================
+
+.s-6 {
+  @include section;
+  background: $bg-light;
+  
+  .planos-grid {
+    @include grid(3, $spacing-lg);
+    margin-top: $spacing-3xl;
+    
+    @include responsive(lg) {
+      @include grid(1, $spacing-lg);
+    }
+  }
+  
+  .plano-card {
+    background: $text-white;
+    padding: $spacing-2xl;
+    border-radius: $radius-lg;
+    border: 1px solid $border-color;
+    text-align: center;
+    transition: all $transition-base;
+    box-shadow: $shadow-md;
+    
+    &:hover {
+      border-color: $primary-color;
+      box-shadow: $shadow-lg;
+      transform: translateY(-5px);
+    }
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+    }
+    
+    .price {
+      font-size: $font-size-4xl;
+      font-weight: $font-weight-bold;
+      color: $text-dark;
+      margin-bottom: $spacing-xl;
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: $spacing-2xl;
+      
+      li {
+        @include flex(row, center, flex-start);
+        font-size: $font-size-base;
+        color: $text-light;
+        margin-bottom: $spacing-sm;
+        
+        i {
+          color: $primary-color;
+          margin-right: $spacing-sm;
+          font-size: $font-size-lg;
+        }
+      }
+    }
+    
+    .btn {
+      @include button-primary;
+      width: 100%;
+    }
+  }
+}
+
+// ========================================
+// SEÇÃO 7 - GALERIA DE ESTRUTURA
+// ========================================
+
+.s-7 {
+  @include section;
+  
+  .galeria-grid {
+    @include grid(3, $spacing-lg);
+    margin-top: $spacing-3xl;
+    
+    @include responsive(md) {
+      @include grid(2, $spacing-lg);
+    }
+    
+    @include responsive(sm) {
+      @include grid(1, $spacing-lg);
+    }
+  }
+  
+  .galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+    
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: $text-white;
+      padding: $spacing-sm;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      text-align: center;
+    }
+  }
+}
+
+// ========================================
+// SEÇÃO 8 - DEPOIMENTOS
+// ========================================
+
+.s-8 {
+  @include section;
+  background: $primary-color;
+  color: $text-white;
+  text-align: center;
+  
+  .depoimentos-grid {
+    @include grid(1, $spacing-3xl);
+    max-width: 800px;
+    margin: $spacing-3xl auto 0;
+  }
+  
+  .depoimento-card {
+    padding: $spacing-xl;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .stars {
+      color: $secondary-color;
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-md;
+    }
+    
+    .text {
+      font-size: $font-size-lg;
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: $spacing-lg;
+      opacity: 0.9;
+    }
+    
+    .author {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-base;
+      display: block;
+      margin-bottom: $spacing-xs;
+      
+      span {
+        font-weight: $font-weight-regular;
+        font-size: $font-size-sm;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+// ========================================
+// SEÇÃO 9 - CTA FINAL
+// ========================================
+
+.s-9 {
+  @include section;
+  background: $primary-color;
+  color: $text-white;
+  text-align: center;
+  
+  h2 {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-2xl;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    @include flex(row, center, center);
+    gap: $spacing-lg;
+    
+    @include responsive(sm) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .btn {
+      @include button-base;
+      font-weight: $font-weight-semibold;
+      
+      &.btn-white {
+        background: $text-white;
+        color: $primary-color;
+      }
+      
+      &.btn-outline-white {
+        background: transparent;
+        border: 2px solid $text-white;
+        color: $text-white;
+        
+        &:hover {
+          background: $text-white;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* Correção para alinhar botões na parte inferior dos cards de plano */
+.plano-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+  .btn {
+    margin-top: auto;
+  }
+}
+

@@ -1,0 +1,208 @@
+// ========================================
+// PÁGINA DE CONVÊNIOS
+// ========================================
+
+.convenios-page {
+  @include section;
+  background: $secondary-color;
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    background: $gradient-primary;
+    color: $text-white;
+    padding: $spacing-2xl;
+    border-radius: $radius-xl;
+    
+    h1 {
+      color: $text-white;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      opacity: 0.95;
+    }
+  }
+  
+  .planos-section {
+    margin-bottom: $spacing-3xl;
+    
+    h2 {
+      @include section-title;
+      margin-bottom: $spacing-2xl;
+    }
+    
+    .planos-grid {
+      @include grid(3, $spacing-xl);
+    }
+    
+    .plano-detalhado {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: $secondary-color;
+      border-radius: $radius-lg;
+      overflow: hidden;
+      box-shadow: $shadow-lg;
+      transition: all $transition-base;
+      border: 3px solid $border-color;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: $shadow-xl;
+        border-color: $primary-color;
+      }
+      
+      .plano-header {
+        background: $gradient-primary;
+        color: $text-white;
+        padding: $spacing-lg;
+        text-align: center;
+        
+        h3 {
+          color: $text-white;
+          font-size: $font-size-2xl;
+          margin-bottom: $spacing-sm;
+        }
+        
+        .preco {
+          font-size: $font-size-4xl;
+          font-weight: $font-weight-bold;
+          margin-bottom: $spacing-xs;
+        }
+        
+        .periodo {
+          font-size: $font-size-sm;
+          opacity: 0.9;
+        }
+      }
+      
+      .plano-body {
+        padding: $spacing-xl;
+        
+        ul {
+          li {
+            padding: $spacing-sm 0;
+            border-bottom: 1px solid $border-color;
+            color: $text-light;
+            @include flex(row, flex-start, flex-start);
+            gap: $spacing-sm;
+            
+            &:last-child {
+              border-bottom: none;
+            }
+            
+            &::before {
+              content: '✓';
+              color: $primary-color;
+              font-weight: $font-weight-bold;
+              font-size: $font-size-lg;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+      
+      .plano-footer {
+        margin-top: auto;
+        padding: 0 $spacing-xl $spacing-xl;
+        
+        .btn {
+          @include button-primary;
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  .beneficios-adicionais {
+    background: $bg-light;
+    padding: $spacing-2xl;
+    border-radius: $radius-lg;
+    margin-bottom: $spacing-3xl;
+    
+    h2 {
+      color: $primary-color;
+      text-align: center;
+      margin-bottom: $spacing-xl;
+    }
+    
+    .beneficios-grid {
+      @include grid(3, $spacing-lg);
+    }
+    
+    .beneficio-card {
+      background: $secondary-color;
+      padding: $spacing-lg;
+      border-radius: $radius-md;
+      text-align: center;
+      box-shadow: $shadow-sm;
+      
+      .icon {
+        font-size: $font-size-3xl;
+        margin-bottom: $spacing-sm;
+      }
+      
+      h4 {
+        color: $primary-color;
+        margin-bottom: $spacing-xs;
+      }
+      
+      .preco {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        color: $text-dark;
+      }
+    }
+  }
+  
+  .info-importante {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: $spacing-lg;
+    border-radius: $radius-md;
+    margin-bottom: $spacing-2xl;
+    
+    h3 {
+      color: #856404;
+      margin-bottom: $spacing-sm;
+    }
+    
+    p {
+      color: #856404;
+      font-size: $font-size-sm;
+      line-height: 1.6;
+    }
+  }
+  
+  .cta-convenio {
+    text-align: center;
+    padding: $spacing-2xl;
+    background: $gradient-primary;
+    border-radius: $radius-xl;
+    color: $text-white;
+    
+    h2 {
+      color: $text-white;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-xl;
+      opacity: 0.95;
+    }
+    
+    .btn {
+      @include button-base;
+      background: $secondary-color;
+      color: $primary-color;
+      margin: 0 $spacing-xs;
+      
+      &:hover {
+        background: darken($secondary-color, 5%);
+      }
+    }
+  }
+}

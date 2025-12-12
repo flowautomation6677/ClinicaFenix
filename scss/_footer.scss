@@ -1,0 +1,165 @@
+// ========================================
+// FOOTER
+// ========================================
+
+.footer {
+  background: $text-dark;
+  color: $text-white;
+  padding: $spacing-2xl 0 $spacing-md;
+  
+  .footer-content {
+    @include grid(4, $spacing-xl);
+    margin-bottom: $spacing-xl;
+    
+    @include responsive(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include responsive(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .footer-section {
+    h3 {
+      color: $text-white;
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-md;
+      padding-bottom: $spacing-sm;
+      border-bottom: 2px solid $primary-color;
+    }
+    
+    p, a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: $font-size-sm;
+      line-height: 1.8;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    
+    ul {
+      li {
+        margin-bottom: $spacing-xs;
+        
+        a {
+          @include flex(row, center, flex-start);
+          gap: $spacing-xs;
+          transition: all $transition-fast;
+          
+          &:hover {
+            transform: translateX(5px);
+          }
+          
+          &::before {
+            content: '→';
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+  
+  .footer-logo {
+    img {
+      max-width: 200px;
+      margin-bottom: $spacing-md;
+    }
+  }
+  
+  .social-links {
+    @include flex(row, center, flex-start);
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+    
+    a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      @include flex(row, center, center);
+      font-size: $font-size-lg;
+      transition: all $transition-base;
+      
+      &:hover {
+        background: $primary-color;
+        transform: translateY(-3px);
+      }
+    }
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: $spacing-md;
+    text-align: center;
+    
+    p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: $font-size-xs;
+    }
+    
+    .footer-links {
+      @include flex(row, center, center);
+      gap: $spacing-md;
+      margin-top: $spacing-sm;
+      
+      @include responsive(md) {
+        flex-direction: column;
+        gap: $spacing-xs;
+      }
+      
+      a {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: $font-size-xs;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Botão WhatsApp Flutuante
+.whatsapp-float {
+  position: fixed;
+  bottom: $spacing-lg;
+  right: $spacing-lg;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  @include flex(row, center, center);
+  font-size: $font-size-2xl;
+  color: $text-white;
+  box-shadow: $shadow-xl;
+  z-index: $z-tooltip;
+  transition: all $transition-base;
+  animation: pulse 2s infinite;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  }
+  
+  @include responsive(md) {
+    width: 50px;
+    height: 50px;
+    bottom: $spacing-md;
+    right: $spacing-md;
+    font-size: $font-size-xl;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}

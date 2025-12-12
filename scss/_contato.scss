@@ -1,0 +1,219 @@
+// ========================================
+// PÁGINA DE CONTATO
+// ========================================
+
+.contato-page {
+  @include section;
+  background: $secondary-color;
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    
+    h1 {
+      @include section-title;
+      color: $primary-color;
+    }
+    
+    p {
+      @include section-subtitle;
+    }
+  }
+  
+  .contato-content {
+    @include flex(row, flex-start, space-between);
+    gap: $spacing-2xl;
+    
+    @include responsive(lg) {
+      flex-direction: column;
+    }
+  }
+  
+  .contato-info {
+    flex: 1;
+    
+    h2 {
+      color: $primary-color;
+      margin-bottom: $spacing-lg;
+    }
+    
+    .info-item {
+      @include flex(row, flex-start, flex-start);
+      gap: $spacing-md;
+      margin-bottom: $spacing-lg;
+      padding: $spacing-md;
+      background: $bg-light;
+      border-radius: $radius-md;
+      transition: all $transition-base;
+      
+      &:hover {
+        transform: translateX(10px);
+        box-shadow: $shadow-md;
+      }
+      
+      .icon {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        background: $gradient-primary;
+        border-radius: 50%;
+        @include flex(row, center, center);
+        font-size: $font-size-xl;
+        color: $text-white;
+      }
+      
+      .content {
+        h3 {
+          color: $text-dark;
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-xs;
+        }
+        
+        p, a {
+          color: $text-light;
+          font-size: $font-size-sm;
+          line-height: 1.6;
+        }
+        
+        a {
+          color: $primary-color;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    
+    .horario-box {
+      background: $gradient-primary;
+      color: $text-white;
+      padding: $spacing-lg;
+      border-radius: $radius-md;
+      margin-top: $spacing-xl;
+      
+      h3 {
+        color: $text-white;
+        margin-bottom: $spacing-md;
+      }
+      
+      p {
+        margin-bottom: $spacing-xs;
+        @include flex(row, center, space-between);
+        
+        span {
+          &:first-child {
+            font-weight: $font-weight-semibold;
+          }
+        }
+      }
+    }
+  }
+  
+  .contato-form {
+    flex: 1;
+    background: $bg-light;
+    padding: $spacing-xl;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+    
+    h2 {
+      color: $primary-color;
+      margin-bottom: $spacing-lg;
+    }
+    
+    .form-group {
+      margin-bottom: $spacing-md;
+      
+      label {
+        display: block;
+        color: $text-dark;
+        font-weight: $font-weight-medium;
+        margin-bottom: $spacing-xs;
+        font-size: $font-size-sm;
+      }
+      
+      input, textarea, select {
+        width: 100%;
+        padding: $spacing-sm $spacing-md;
+        border: 2px solid $border-color;
+        border-radius: $radius-md;
+        font-size: $font-size-base;
+        transition: all $transition-fast;
+        background: $secondary-color;
+        
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+          box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+        }
+      }
+      
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+    }
+    
+    .btn-submit {
+      @include button-primary;
+      width: 100%;
+      padding: $spacing-md;
+      font-size: $font-size-md;
+      
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+    
+    .form-message {
+      margin-top: $spacing-md;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $radius-md;
+      font-size: $font-size-sm;
+      display: none;
+      
+      &.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        display: block;
+      }
+      
+      &.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        display: block;
+      }
+    }
+  }
+  
+  .mapa-section {
+    margin-top: $spacing-3xl;
+    
+    h2 {
+      @include section-title;
+      margin-bottom: $spacing-xl;
+    }
+    
+    .mapa-container {
+      width: 100%;
+      height: 450px;
+      border-radius: $radius-lg;
+      overflow: hidden;
+      box-shadow: $shadow-lg;
+      
+      @include responsive(md) {
+        height: 350px;
+      }
+      
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+}

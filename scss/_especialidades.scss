@@ -1,0 +1,105 @@
+// ========================================
+// PÁGINA DE ESPECIALIDADES
+// ========================================
+
+.especialidades-page {
+  @include section;
+  background: $secondary-color;
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    
+    h1 {
+      @include section-title;
+      color: $primary-color;
+    }
+    
+    p {
+      @include section-subtitle;
+    }
+  }
+  
+  .search-filter {
+    max-width: 600px;
+    margin: 0 auto $spacing-2xl;
+    
+    input {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      border: 2px solid $border-color;
+      border-radius: $radius-md;
+      font-size: $font-size-base;
+      transition: all $transition-fast;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+      }
+    }
+  }
+  
+  .especialidades-list {
+    @include grid(3, $spacing-lg);
+  }
+  
+  .especialidade-item {
+    @include card;
+    @include flex(column, flex-start, flex-start);
+    
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: $gradient-primary;
+      border-radius: 50%;
+      @include flex(row, center, center);
+      font-size: $font-size-3xl;
+	      color: #FFFFFF;
+      margin-bottom: $spacing-md;
+    }
+    
+    h3 {
+      color: $primary-color;
+      margin-bottom: $spacing-sm;
+      font-size: $font-size-lg;
+    }
+    
+    p {
+      color: $text-light;
+      font-size: $font-size-sm;
+      line-height: 1.6;
+      margin-bottom: $spacing-md;
+      flex-grow: 1;
+    }
+    
+    .btn-agendar {
+      @include button-primary;
+      width: 100%;
+      padding: $spacing-xs $spacing-md;
+      font-size: $font-size-sm;
+    }
+  }
+  
+  .clinicas-info {
+    margin-top: $spacing-3xl;
+    padding: $spacing-xl;
+    background: $bg-light;
+    border-radius: $radius-lg;
+    text-align: center;
+    
+    h2 {
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      color: $text-light;
+      margin-bottom: $spacing-lg;
+    }
+    
+    .btn {
+      @include button-primary;
+    }
+  }
+}

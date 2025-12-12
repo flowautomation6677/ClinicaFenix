@@ -1,0 +1,124 @@
+// ========================================
+// RESET GLOBAL
+// ========================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  
+  @include responsive(lg) {
+    font-size: 15px;
+  }
+  
+  @include responsive(md) {
+    font-size: 14px;
+  }
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: 1.6;
+  color: $text-dark;
+  background: $secondary-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  
+  @include responsive(lg) {
+    font-size: $font-size-3xl;
+  }
+  
+  @include responsive(md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+  
+  @include responsive(lg) {
+    font-size: $font-size-2xl;
+  }
+  
+  @include responsive(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+  
+  @include responsive(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-xl;
+  
+  @include responsive(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+img {
+  @include img-responsive;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// Remover outline padrão mas manter acessibilidade
+:focus-visible {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}

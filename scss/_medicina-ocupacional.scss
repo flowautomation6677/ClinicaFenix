@@ -1,0 +1,193 @@
+// ========================================
+// PÁGINA DE MEDICINA OCUPACIONAL
+// ========================================
+
+.medicina-ocupacional-page {
+  .hero-ocupacional {
+    @include section;
+    background: $gradient-primary;
+    color: $text-white;
+    text-align: center;
+    
+    h1 {
+      color: $text-white;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      max-width: 800px;
+      margin: 0 auto $spacing-xl;
+      opacity: 0.95;
+    }
+    
+    .btn {
+      @include button-base;
+      background: $secondary-color;
+      color: $primary-color;
+      
+      &:hover {
+        background: darken($secondary-color, 5%);
+      }
+    }
+  }
+  
+  .esocial-section {
+    @include section;
+    background: $secondary-color;
+    
+    .esocial-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      
+      h2 {
+        @include section-title;
+        color: $primary-color;
+      }
+      
+      .destaque {
+        background: $bg-light;
+        padding: $spacing-xl;
+        border-radius: $radius-lg;
+        border-left: 4px solid $primary-color;
+        margin: $spacing-2xl 0;
+        
+        h3 {
+          color: $primary-color;
+          margin-bottom: $spacing-sm;
+        }
+        
+        p {
+          color: $text-light;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+  
+  .servicos-section {
+    @include section;
+    background: $bg-light;
+    
+    h2 {
+      @include section-title;
+    }
+    
+    p.subtitle {
+      @include section-subtitle;
+    }
+    
+    .servicos-grid {
+      @include grid(3, $spacing-lg);
+      margin-top: $spacing-2xl;
+    }
+    
+    .servico-card {
+      @include card;
+      text-align: center;
+      
+      .icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto $spacing-md;
+        background: $gradient-primary;
+        border-radius: 50%;
+        @include flex(row, center, center);
+        font-size: $font-size-2xl;
+        color: $text-white;
+      }
+      
+      h3 {
+        color: $primary-color;
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-sm;
+      }
+      
+      p {
+        color: $text-light;
+        font-size: $font-size-sm;
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  .beneficios-section {
+    @include section;
+    background: $secondary-color;
+    
+    h2 {
+      @include section-title;
+    }
+    
+    .beneficios-grid {
+      @include grid(2, $spacing-xl);
+      margin-top: $spacing-2xl;
+    }
+    
+    .beneficio-item {
+      @include flex(row, flex-start, flex-start);
+      gap: $spacing-md;
+      padding: $spacing-lg;
+      background: $bg-light;
+      border-radius: $radius-md;
+      transition: all $transition-base;
+      
+      &:hover {
+        transform: translateX(10px);
+        box-shadow: $shadow-md;
+      }
+      
+      .icon {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        background: $primary-color;
+        color: $text-white;
+        border-radius: 50%;
+        @include flex(row, center, center);
+        font-size: $font-size-xl;
+      }
+      
+      .content {
+        h3 {
+          color: $primary-color;
+          margin-bottom: $spacing-xs;
+        }
+        
+        p {
+          color: $text-light;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+  
+  .cta-section {
+    @include section;
+    background: $gradient-primary;
+    color: $text-white;
+    text-align: center;
+    
+    h2 {
+      color: $text-white;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-xl;
+      opacity: 0.95;
+    }
+    
+    .btn {
+      @include button-base;
+      background: $secondary-color;
+      color: $primary-color;
+      
+      &:hover {
+        background: darken($secondary-color, 5%);
+      }
+    }
+  }
+}

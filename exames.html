@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="overflow-x: hidden; width: 100%; max-width: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exames disponíveis na Clínica Fenix. Exames laboratoriais, de imagem, ocupacionais e complementares na matriz e clínicas parceiras.">
+    <meta name="keywords" content="exames, exames laboratoriais, raio x, ultrassom, audiometria, eletrocardiograma, exames ocupacionais">
+    <title>Exames - Clínica Fenix</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="icon" type="image/png" href="img/LogoClinicaFenix.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/LogoClinicaFenix.png" alt="Clínica Fenix">
+            </a>
+            
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="especialidades.html" class="nav-link">Especialidades</a>
+                <a href="medicina-ocupacional.html" class="nav-link">Medicina Ocupacional</a>
+                <a href="exames.html" class="nav-link active">Exames</a>
+                <a href="convenios.html" class="nav-link">Convênios</a>
+                <a href="clinicas-conveniadas.html" class="nav-link">Clínicas</a>
+                <a href="contato.html" class="nav-link">Contato</a>
+                <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta</a>
+            </nav>
+            
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- Página de Exames -->
+    <section class="exames-page" style="background-image: url('img/Globofundoclinicafenix.png'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="page-header" data-aos="fade-up">
+                <h1>Exames Disponíveis</h1>
+                <p>Realizamos uma ampla variedade de exames laboratoriais, de imagem e ocupacionais em nossa matriz e em clínicas parceiras</p>
+            </div>
+            
+            <div class="search-bar" data-aos="fade-up">
+                <input type="text" id="searchExame" placeholder="Buscar exame..." />
+                <span class="search-icon"><i class="fas fa-search"></i></span>
+            </div>
+            
+            <!-- Exames na Matriz -->
+            <div class="exames-categoria">
+                <h2 data-aos="fade-right"><i class="fas fa-hospital"></i> Exames Disponíveis na Matriz</h2>
+                <div class="exames-grid" id="examesMatriz">
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-eye"></i></div>
+                        <h4>Acuidade Visual</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-music"></i></div>
+                        <h4>Audiometria</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h4>Avaliação Psicossocial</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon"><i class="fas fa-syringe"></i></div>
+                        <h4>Aplicação de Varizes</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="250">
+                        <div class="icon"><i class="fas fa-heart"></i></div>
+                        <h4>Eletrocardiograma</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h4>Eletroencefalograma</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="350">
+                        <div class="icon"><i class="fas fa-microscope"></i></div>
+                        <h4>Exames Laboratoriais</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                        <h4>MAPA 24h</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="450">
+                        <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                        <h4>Holter</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="icon"><i class="fas fa-female"></i></div>
+                        <h4>Preventivo</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="550">
+                        <div class="icon"><i class="fas fa-bone"></i></div>
+                        <h4>Raio X</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="600">
+                        <div class="icon"><i class="fas fa-syringe"></i></div>
+                        <h4>Infiltração</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="650">
+                        <div class="icon"><i class="fas fa-satellite-dish"></i></i></div>
+                        <h4>Impedanciometria</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="700">
+                        <div class="icon"><i class="fas fa-music"></i></div>
+                        <h4>Imitanciometria</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="750">
+                        <div class="icon"><i class="fas fa-person"></i></div>
+                        <h4>Teste Romberg</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="800">
+                        <div class="icon"><i class="fas fa-head-side-mask"></i></div>
+                        <h4>Testes Alérgicos</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="850">
+                        <div class="icon"><i class="fas fa-car"></i></div>
+                        <h4>Toxicológico</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="900">
+                        <div class="icon"><i class="fas fa-satellite-dish"></i></div>
+                        <h4>Ultrassonografia</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exames nas Clínicas Parceiras -->
+            <div class="exames-categoria">
+                <h2 data-aos="fade-right"><i class="fas fa-building"></i> Exames nas Clínicas Parceiras</h2>
+                <div class="exames-grid" id="examesParceiras">
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>Balão Intragástrico</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-microscope"></i></div>
+                        <h4>Biópsia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="icon"><i class="fas fa-radiation"></i></div>
+                        <h4>Cintilografia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>Colposcopia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="250">
+                        <div class="icon"><i class="fas fa-bone"></i></div>
+                        <h4>Densitometria</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon"><i class="fas fa-bolt"></i></div>
+                        <h4>Eletroneuromiografia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="350">
+                        <div class="icon"><i class="fas fa-video"></i></div>
+                        <h4>Endoscopia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="icon"><i class="fas fa-running"></i></div>
+                        <h4>Ergometria</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="450">
+                        <div class="icon"><i class="fas fa-microscope"></i></div>
+                        <h4>Histeroscopia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                        <h4>Holter</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="550">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h4>Mapeamento Cerebral</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="600">
+                        <div class="icon"><i class="fas fa-video"></i></div>
+                        <h4>Retossigmoidoscopia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="650">
+                        <div class="icon">👶</div>
+                        <h4>USG Translucência Nucal</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="700">
+                        <div class="icon"><i class="fas fa-microphone"></i></div>
+                        <h4>Vídeo Laringoscopia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="750">
+                        <div class="icon"><i class="fas fa-eye"></i></div>
+                        <h4>Vectoelectronistagmografia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="800">
+                        <div class="icon"><i class="fas fa-stethoscope"></i></div>
+                        <h4>Mamografia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="850">
+                        <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                        <h4>Manometria</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="900">
+                        <div class="icon"><i class="fas fa-syringe"></i></div>
+                        <h4>Punção</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="950">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>pHmetria</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1000">
+                        <div class="icon"><i class="fas fa-magnet"></i></div>
+                        <h4>Ressonância</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1050">
+                        <div class="icon"><i class="fas fa-video"></i></div>
+                        <h4>Retossigmóide</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1100">
+                        <div class="icon"><i class="fas fa-laptop"></i></div>
+                        <h4>Tomografia</h4>
+                    </div>
+                    
+                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1150">
+                        <div class="icon"><i class="fas fa-search-plus"></i></div>
+                        <h4>Vulvoscopia</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Info Box -->
+            <div class="info-box" data-aos="fade-up">
+                <h3><i class="fas fa-clipboard-list"></i> Informações Importantes</h3>
+                <p>Todos os exames são realizados com equipamentos modernos e por profissionais qualificados. Os exames disponíveis nas clínicas parceiras são realizados em unidades conveniadas estrategicamente localizadas para facilitar seu acesso.</p>
+                <p>Para agendar seu exame ou obter mais informações sobre preparos e procedimentos, entre em contato conosco.</p>
+                <a href="https://wa.me/5521991685938" class="btn" target="_blank">Agendar Exame</a>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-exames" data-aos="zoom-in">
+                <h2>Precisa Realizar um Exame?</h2>
+                <p>Agende agora mesmo e conte com a qualidade e agilidade da Clínica Fenix</p>
+                <a href="https://wa.me/5521991685938" class="btn" target="_blank">Agendar pelo WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-logo">
+                    <img src="img/logonegativa.png" alt="Clínica Fenix">
+                    <p>Cuidando da sua saúde com excelência e humanização.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/clinicafenix" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/clinicafenixsaude" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521991685938" target="_blank" aria-label="WhatsApp Atendimento PF"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="especialidades.html">Especialidades</a></li>
+                        <li><a href="medicina-ocupacional.html">Medicina Ocupacional</a></li>
+                        <li><a href="exames.html">Exames</a></li>
+                        <li><a href="convenios.html">Convênios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li><a href="clinicas-conveniadas.html">Clínicas Conveniadas</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua João Fernandes Neto - Centro, Belford Roxo, 984</p>
+                    <p><i class="fas fa-phone"></i> Telefone Fixo: (21) 3582-2115</p>
+                            <p><i class="fab fa-whatsapp"></i> Atendimento PF: (21) 96950-1839</p>
+                            <p><i class="fab fa-whatsapp"></i> Atendimento PJ: (21) 96826-8160</p>
+                            <p><i class="fab fa-whatsapp"></i> Segurança do Trabalho: (21) 97359-5484</p>
+                            <p><i class="fab fa-whatsapp"></i> Comercial PJ: (21) 99168-5938</p>
+                    <p><i class="fas fa-envelope"></i> contato@clinicafenix.com.br</p>
+                    <p>🕒 Seg - Sex: 7:30h às 18h<br>Sáb: 7:30h às 18h</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clínica Fenix. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">LGPD</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5521991685938" class="whatsapp-float" target="_blank" aria-label="WhatsApp Atendimento PF">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

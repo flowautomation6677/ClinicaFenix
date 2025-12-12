@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="overflow-x: hidden; width: 100%; max-width: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clínicas Conveniadas da Clínica Fenix. Atendimento em diversas localidades do Rio de Janeiro e região metropolitana.">
+    <meta name="keywords" content="clínicas conveniadas, unidades, localização, Rio de Janeiro, atendimento">
+    <title>Clínicas Conveniadas - Clínica Fenix</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="icon" type="image/png" href="img/LogoClinicaFenix.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/LogoClinicaFenix.png" alt="Clínica Fenix">
+            </a>
+            
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="especialidades.html" class="nav-link">Especialidades</a>
+                <a href="medicina-ocupacional.html" class="nav-link">Medicina Ocupacional</a>
+                <a href="exames.html" class="nav-link">Exames</a>
+                <a href="convenios.html" class="nav-link">Convênios</a>
+                <a href="clinicas-conveniadas.html" class="nav-link active">Clínicas</a>
+                <a href="contato.html" class="nav-link">Contato</a>
+                <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Entrar em Contato</a>
+            </nav>
+            
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- Página de Clínicas Conveniadas -->
+    <section class="clinicas-page">
+        <div class="container">
+            <div class="page-header" data-aos="fade-up">
+                <h1>Clínicas Conveniadas</h1>
+                <p>Atendimento em diversas localidades do Rio de Janeiro e região metropolitana para facilitar seu acesso aos nossos serviços</p>
+            </div>
+            
+            <div class="filtro-zona" data-aos="fade-up">
+                <div class="filtro-buttons">
+                    <button class="btn-filtro active" data-zona="todas">Todas</button>
+                    <button class="btn-filtro" data-zona="central">Zona Central</button>
+                    <button class="btn-filtro" data-zona="sul">Zona Sul</button>
+                    <button class="btn-filtro" data-zona="oeste">Zona Oeste</button>
+                    <button class="btn-filtro" data-zona="norte">Zona Norte</button>
+                    <button class="btn-filtro" data-zona="baixada">Baixada Fluminense</button>
+                    <button class="btn-filtro" data-zona="metropolitana">Região Metropolitana</button>
+                </div>
+            </div>
+            
+            <!-- Zona Central -->
+            <div class="zona-section" data-zona="central">
+                <h2 data-aos="fade-right"><i class="fas fa-city"></i> Zona Central</h2>
+                <div class="clinicas-grid">
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>C. M. Imperial (Pl. Imperial)</h3>
+                            <div class="localizacao">São Cristóvão</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Policlínica São Cristóvão</h3>
+                            <div class="localizacao">São Cristóvão</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Endocrino</span>
+                                    <span class="tag">Dermato</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zona Sul -->
+            <div class="zona-section" data-zona="sul">
+                <h2 data-aos="fade-right"><i class="fas fa-umbrella-beach"></i> Zona Sul</h2>
+                <div class="clinicas-grid">
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Arnaldo Quintela</h3>
+                            <div class="localizacao">Botafogo</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Gastroenterologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Nefrologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Angiologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zona Oeste -->
+            <div class="zona-section" data-zona="oeste">
+                <h2 data-aos="fade-right"><i class="fas fa-sun"></i> Zona Oeste</h2>
+                <div class="clinicas-grid">
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clini-K</h3>
+                            <div class="localizacao">Barra (Itanhangá)</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Medicina da Família</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Saúde Vida Taquara</h3>
+                            <div class="localizacao">Taquara (Jacarepaguá)</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clínica Real Ortofísio</h3>
+                            <div class="localizacao">Bangu</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Alergologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Endocrino</span>
+                                    <span class="tag">Pneumologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clínica Cimmal</h3>
+                            <div class="localizacao">Marechal Hermes</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Proctologia</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Reumatologia</span>
+                                    <span class="tag">Alergologia</span>
+                                    <span class="tag">Geriatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Saúde Oeste</h3>
+                            <div class="localizacao">Campo Grande</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Alergologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Pneumologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Semeri (Serviços Médicos RJ Comboatá)</h3>
+                            <div class="localizacao">Deodoro</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clínica Apollo Saúde</h3>
+                            <div class="localizacao">Santa Cruz</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Dermato</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clínica Artmed</h3>
+                            <div class="localizacao">Santa Cruz</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Neuropediatria</span>
+                                    <span class="tag">Psiquiatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="450">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Sancor</h3>
+                            <div class="localizacao">Santa Cruz</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Alergista</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Pneumologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zona Norte -->
+            <div class="zona-section" data-zona="norte">
+                <h2 data-aos="fade-right"><i class="fas fa-building"></i> Zona Norte</h2>
+                <div class="clinicas-grid">
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Centro Médico Climobol</h3>
+                            <div class="localizacao">Engenho Novo</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Pediatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Centro Médico Emam</h3>
+                            <div class="localizacao">Méier</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Dermato</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Reumatologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Centro Médico Letícia</h3>
+                            <div class="localizacao">Tijuca</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Dermato</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Endocrino</span>
+                                    <span class="tag">Mastologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Centro Médico Piedade</h3>
+                            <div class="localizacao">Piedade</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Pneumologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Psiquiatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Policlínica Higienópolis Ltda</h3>
+                            <div class="localizacao">Higienópolis</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Proctologia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Otorrino</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Centro Médico Solidário</h3>
+                            <div class="localizacao">Ilha do Governador</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Dermato</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Psiquiatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Policlínica Médica Dentária</h3>
+                            <div class="localizacao">Ilha do Governador</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Obstetrícia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Mastologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Geriatria</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Psicologia</span>
+                                    <span class="tag">Fisioterapia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Nutrição</span>
+                                    <span class="tag">Endocrino</span>
+                                    <span class="tag">Dermato</span>
+                                    <span class="tag">Alergista</span>
+                                    <span class="tag">Ortopedia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Baixada Fluminense -->
+            <div class="zona-section" data-zona="baixada">
+                <h2 data-aos="fade-right"><i class="fas fa-home"></i> Baixada Fluminense</h2>
+                <div class="clinicas-grid">
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Cemedig (Centro Médico Diagnóstico Gramacho)</h3>
+                            <div class="localizacao">Gramacho (Caxias)</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Dermato</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Reumatologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Oftalmologia</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Proctologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Obstetrícia</span>
+                                    <span class="tag">Mastologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Geriatria</span>
+                                    <span class="tag">Pediatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clínica Santa Martha</h3>
+                            <div class="localizacao">Pilar (Caxias)</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Geriatria</span>
+                                    <span class="tag">Nutrição</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Obstetrícia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Reumatologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Santa Carmela</h3>
+                            <div class="localizacao">Nilópolis</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Dermatologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clínica Médica Fênix</h3>
+                            <div class="localizacao">Belford Roxo</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Reumatologia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Alergista</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Proctologia</span>
+                                    <span class="tag">Psicologia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Nutrição</span>
+                                    <span class="tag">Mastologia</span>
+                                    <span class="tag">Pediatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Cmap Saúde - Jardim 25 de Agosto</h3>
+                            <div class="localizacao">Jardim 25 de Agosto (Caxias)</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Nutrição</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Geriatria</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Fisioterapia</span>
+                                    <span class="tag">Dentista</span>
+                                    <span class="tag">Psicologia</span>
+                                    <span class="tag">Podologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Cmap Saúde - Jardim Primavera</h3>
+                            <div class="localizacao">Jardim Primavera (Caxias)</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Nutrição</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Geriatria</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Fisioterapia</span>
+                                    <span class="tag">Dentista</span>
+                                    <span class="tag">Psicologia</span>
+                                    <span class="tag">Podologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Cmap Saúde - Campos Elíseos</h3>
+                            <div class="localizacao">Campos Elíseos (Caxias)</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Nutrição</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Geriatria</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Angiologia</span>
+                                    <span class="tag">Endocrinologia</span>
+                                    <span class="tag">Fisioterapia</span>
+                                    <span class="tag">Dentista</span>
+                                    <span class="tag">Psicologia</span>
+                                    <span class="tag">Podologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Climag</h3>
+                            <div class="localizacao">Centro de Magé</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Alergologia</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Urologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="450">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Clínica Topmedic</h3>
+                            <div class="localizacao">Nova Iguaçu</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Urologia</span>
+                                    <span class="tag">Proctologia</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Nefrologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Nutrição</span>
+                                    <span class="tag">Neuropediatria</span>
+                                    <span class="tag">Pneumologia</span>
+                                    <span class="tag">Reumatologia</span>
+                                    <span class="tag">Hematologia</span>
+                                    <span class="tag">Dermatologia</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Geriatria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Região Metropolitana -->
+            <div class="zona-section" data-zona="metropolitana">
+               <h2 data-aos="fade-right"><i class="fas fa-map-marked-alt"></i> Região Metropolitana</h2>
+                <div class="clinicas-grid">
+                    <div class="clinica-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon"><i class="fas fa-hospital-alt"></i></div>
+                        <div class="clinica-info">
+                            <h3>Lusibrás (Sindcon)</h3>
+                            <div class="localizacao">São Gonçalo</div>
+                            <div class="especialidades">
+                                <h4>Especialidades:</h4>
+                                <div class="tags">
+                                    <span class="tag">Alergista</span>
+                                    <span class="tag">Clínico Geral</span>
+                                    <span class="tag">Cardiologia</span>
+                                    <span class="tag">Dermato</span>
+                                    <span class="tag">Endocrino</span>
+                                    <span class="tag">Gastro</span>
+                                    <span class="tag">Ginecologia</span>
+                                    <span class="tag">Hepatologia</span>
+                                    <span class="tag">Neurologia</span>
+                                    <span class="tag">Ortopedia</span>
+                                    <span class="tag">Reumatologia</span>
+                                    <span class="tag">Otorrino</span>
+                                    <span class="tag">Pediatria</span>
+                                    <span class="tag">Psiquiatria</span>
+                                    <span class="tag">Urologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="mapa-section" data-aos="fade-up">
+                <h2>Encontre a Clínica Mais Próxima</h2>
+                <p>Utilize o mapa interativo para localizar a clínica conveniada mais próxima de você</p>
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235527.43240937!2d-43.596179!3d-22.906847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bde559108a05b%3A0x50dc426c672fd24e!2sRio%20de%20Janeiro%2C%20RJ!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-clinicas" data-aos="zoom-in">
+                <h2>Precisa Agendar uma Consulta?</h2>
+                <p>Entre em contato conosco e descubra qual clínica conveniada atende sua especialidade</p>
+                <a href="contato.html" class="btn">Entrar em Contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-logo">
+                    <img src="img/logonegativa.png" alt="Clínica Fenix">
+                    <p>Cuidando da sua saúde com excelência e humanização.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/clinicafenix" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/clinicafenixsaude" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521991685938" target="_blank" aria-label="WhatsApp Atendimento PJ"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="especialidades.html">Especialidades</a></li>
+                        <li><a href="medicina-ocupacional.html">Medicina Ocupacional</a></li>
+                        <li><a href="exames.html">Exames</a></li>
+                        <li><a href="convenios.html">Convênios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li><a href="clinicas-conveniadas.html">Clínicas Conveniadas</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua João Fernandes Neto - Centro, Belford Roxo, 984</p>
+                    <p><i class="fas fa-phone"></i> Telefone Fixo: (21) 3582-2115</p>
+                            <p><i class="fab fa-whatsapp"></i> Atendimento PF: (21) 96950-1839</p>
+                            <p><i class="fab fa-whatsapp"></i> Atendimento PJ: (21) 96826-8160</p>
+                            <p><i class="fab fa-whatsapp"></i> Segurança do Trabalho: (21) 97359-5484</p>
+                            <p><i class="fab fa-whatsapp"></i> Comercial PJ: (21) 99168-5938</p>
+                    <p><i class="fas fa-envelope"></i> contato@clinicafenix.com.br</p>
+                    <p>🕒 Seg - Sex: 7:30h às 18h<br>Sáb: 7:30h às 18h</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clínica Fenix. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">LGPD</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5521991685938" class="whatsapp-float" target="_blank" aria-label="WhatsApp Atendimento PJ">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
