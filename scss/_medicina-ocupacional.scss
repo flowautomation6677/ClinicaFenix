@@ -1,193 +1,537 @@
 // ========================================
-// PÁGINA DE MEDICINA OCUPACIONAL
+// PÁGINA DE MEDICINA OCUPACIONAL (B2B)
 // ========================================
 
-.medicina-ocupacional-page {
-  .hero-ocupacional {
-    @include section;
-    background: $gradient-primary;
-    color: $text-white;
-    text-align: center;
-    
-    h1 {
-      color: $text-white;
-      margin-bottom: $spacing-md;
-    }
-    
-    p {
-      font-size: $font-size-lg;
-      max-width: 800px;
-      margin: 0 auto $spacing-xl;
-      opacity: 0.95;
-    }
-    
-    .btn {
-      @include button-base;
-      background: $secondary-color;
-      color: $primary-color;
-      
-      &:hover {
-        background: darken($secondary-color, 5%);
-      }
-    }
-  }
-  
-  .esocial-section {
-    @include section;
-    background: $secondary-color;
-    
-    .esocial-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      
-      h2 {
-        @include section-title;
-        color: $primary-color;
-      }
-      
-      .destaque {
-        background: $bg-light;
-        padding: $spacing-xl;
-        border-radius: $radius-lg;
-        border-left: 4px solid $primary-color;
-        margin: $spacing-2xl 0;
-        
-        h3 {
-          color: $primary-color;
-          margin-bottom: $spacing-sm;
-        }
-        
-        p {
-          color: $text-light;
-          line-height: 1.8;
-        }
-      }
-    }
-  }
-  
-  .servicos-section {
-    @include section;
+// Variáveis locais para a pegada B2B (Corporativo)
+$b2b-dark: #0f172a; // Slate 900
+$b2b-darker: #020617; // Slate 950
+$b2b-accent: #3b82f6; // Blue 500
+$b2b-gold: #fbbf24; // Amber 400
+
+.medicina-ocupacional-b2b {
     background: $bg-light;
-    
-    h2 {
-      @include section-title;
-    }
-    
-    p.subtitle {
-      @include section-subtitle;
-    }
-    
-    .servicos-grid {
-      @include grid(3, $spacing-lg);
-      margin-top: $spacing-2xl;
-    }
-    
-    .servico-card {
-      @include card;
-      text-align: center;
-      
-      .icon {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto $spacing-md;
-        background: $gradient-primary;
-        border-radius: 50%;
-        @include flex(row, center, center);
-        font-size: $font-size-2xl;
-        color: $text-white;
-      }
-      
-      h3 {
-        color: $primary-color;
-        font-size: $font-size-lg;
-        margin-bottom: $spacing-sm;
-      }
-      
-      p {
-        color: $text-light;
-        font-size: $font-size-sm;
-        line-height: 1.6;
-      }
-    }
-  }
-  
-  .beneficios-section {
-    @include section;
-    background: $secondary-color;
-    
-    h2 {
-      @include section-title;
-    }
-    
-    .beneficios-grid {
-      @include grid(2, $spacing-xl);
-      margin-top: $spacing-2xl;
-    }
-    
-    .beneficio-item {
-      @include flex(row, flex-start, flex-start);
-      gap: $spacing-md;
-      padding: $spacing-lg;
-      background: $bg-light;
-      border-radius: $radius-md;
-      transition: all $transition-base;
-      
-      &:hover {
-        transform: translateX(10px);
-        box-shadow: $shadow-md;
-      }
-      
-      .icon {
-        width: 50px;
-        height: 50px;
-        flex-shrink: 0;
-        background: $primary-color;
-        color: $text-white;
-        border-radius: 50%;
-        @include flex(row, center, center);
-        font-size: $font-size-xl;
-      }
-      
-      .content {
-        h3 {
-          color: $primary-color;
-          margin-bottom: $spacing-xs;
+
+    // 1. Hero Split
+    .b2b-hero {
+        position: relative;
+        background: linear-gradient(135deg, $b2b-darker, $b2b-dark);
+        padding: $spacing-3xl 0;
+        overflow: hidden;
+
+        .b2b-wave {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 50px;
+            background: $bg-light;
+            clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
         }
-        
-        p {
-          color: $text-light;
-          font-size: $font-size-sm;
+
+        .hero-split {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $spacing-3xl;
+            position: relative;
+            z-index: 2;
+
+            @include responsive(lg) {
+                flex-direction: column;
+                text-align: center;
+            }
         }
-      }
+
+        .hero-text {
+            flex: 1;
+            color: $text-white;
+
+            .badge-tech {
+                display: inline-block;
+                background: rgba($b2b-accent, 0.2);
+                border: 1px solid rgba($b2b-accent, 0.4);
+                color: lighten($b2b-accent, 20%);
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: $spacing-md;
+            }
+
+            h1 {
+                font-size: 3rem;
+                font-weight: 800;
+                line-height: 1.1;
+                margin-bottom: $spacing-lg;
+
+                .text-highlight {
+                    color: $b2b-accent;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: $b2b-accent;
+                        border-radius: 2px;
+                    }
+                }
+
+                @include responsive(md) {
+                    font-size: 2.2rem;
+                }
+            }
+
+            p {
+                font-size: 1.1rem;
+                opacity: 0.8;
+                margin-bottom: $spacing-2xl;
+                max-width: 550px;
+
+                @include responsive(lg) {
+                    margin: 0 auto $spacing-2xl;
+                }
+            }
+
+            .hero-actions {
+                display: flex;
+                gap: $spacing-md;
+
+                @include responsive(sm) {
+                    flex-direction: column;
+                }
+
+                .btn-b2b-primary {
+                    @include button-base;
+                    background: $b2b-accent;
+                    color: $text-white;
+                    box-shadow: 0 10px 20px rgba($b2b-accent, 0.3);
+
+                    &:hover {
+                        background: lighten($b2b-accent, 5%);
+                        transform: translateY(-2px);
+                    }
+                }
+
+                .btn-b2b-outline {
+                    @include button-base;
+                    background: transparent;
+                    border: 2px solid rgba(255,255,255,0.2);
+                    color: $text-white;
+
+                    &:hover {
+                        border-color: $b2b-accent;
+                        background: rgba($b2b-accent, 0.1);
+                    }
+                }
+            }
+        }
+
+        .hero-graphic {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+
+            @include responsive(lg) {
+                justify-content: center;
+                margin-top: $spacing-2xl;
+            }
+
+            .glass-card {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 24px;
+                padding: $spacing-xl;
+                width: 100%;
+                max-width: 450px;
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-md;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+                .metric {
+                    display: flex;
+                    align-items: center;
+                    gap: $spacing-md;
+                    background: rgba(0, 0, 0, 0.2);
+                    padding: $spacing-md;
+                    border-radius: 16px;
+
+                    i {
+                        font-size: 2rem;
+                        background: rgba(255, 255, 255, 0.1);
+                        width: 50px;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 12px;
+
+                        &.text-success { color: #10b981; }
+                        &.text-primary { color: #3b82f6; }
+                        &.text-warning { color: #f59e0b; }
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+
+                        strong {
+                            color: $text-white;
+                            font-size: 1.1rem;
+                        }
+
+                        span {
+                            color: rgba(255, 255, 255, 0.6);
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
-  
-  .cta-section {
-    @include section;
-    background: $gradient-primary;
-    color: $text-white;
-    text-align: center;
-    
-    h2 {
-      color: $text-white;
-      margin-bottom: $spacing-md;
+
+    // 2. Alerta eSocial
+    .b2b-esocial {
+        margin-top: -$spacing-2xl;
+        position: relative;
+        z-index: 10;
+        padding-bottom: $spacing-3xl;
+
+        .esocial-box {
+            background: linear-gradient(90deg, #1e3a8a, #312e81);
+            border-radius: 24px;
+            padding: $spacing-2xl;
+            display: flex;
+            align-items: center;
+            gap: $spacing-2xl;
+            color: $text-white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+            @include responsive(md) {
+                flex-direction: column;
+                text-align: center;
+                padding: $spacing-xl;
+            }
+
+            .esocial-icon {
+                font-size: 4rem;
+                color: $b2b-gold;
+                
+                .pulse-anim {
+                    animation: pulse 2s infinite;
+                }
+            }
+
+            .esocial-info {
+                flex: 1;
+
+                h2 {
+                    font-size: 1.8rem;
+                    margin-bottom: $spacing-sm;
+                    color: $text-white;
+                }
+
+                p {
+                    opacity: 0.85;
+                    line-height: 1.6;
+                    font-size: 1rem;
+                    margin: 0;
+
+                    strong {
+                        color: $b2b-gold;
+                    }
+                }
+            }
+
+            .esocial-action {
+                .btn-esocial {
+                    @include button-base;
+                    background: $b2b-gold;
+                    color: $b2b-darker;
+                    font-weight: 800;
+                    white-space: nowrap;
+
+                    &:hover {
+                        background: lighten($b2b-gold, 10%);
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
     }
-    
-    p {
-      font-size: $font-size-lg;
-      margin-bottom: $spacing-xl;
-      opacity: 0.95;
+
+    // 3. Bento Grid
+    .b2b-bento-services {
+        padding: $spacing-3xl 0;
+        background: $bg-light;
+
+        .bento-header {
+            text-align: center;
+            margin-bottom: $spacing-3xl;
+
+            h2 {
+                font-size: 2.5rem;
+                color: $b2b-darker;
+                margin-bottom: $spacing-xs;
+            }
+
+            p {
+                color: $text-light;
+                font-size: 1.1rem;
+            }
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: $spacing-md;
+            auto-rows: 250px; // Define a altura base
+
+            @include responsive(lg) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include responsive(sm) {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-item {
+                background: $text-white;
+                border-radius: 24px;
+                padding: $spacing-xl;
+                border: 1px solid rgba(0,0,0,0.05);
+                box-shadow: $shadow-sm;
+                transition: all $transition-base;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                position: relative;
+                overflow: hidden;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: $shadow-lg;
+                    border-color: rgba($b2b-accent, 0.3);
+                }
+
+                .bento-icon {
+                    font-size: 2rem;
+                    color: $b2b-accent;
+                    margin-bottom: $spacing-md;
+                }
+
+                h3 {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    margin-bottom: $spacing-sm;
+                    color: $b2b-darker;
+                }
+
+                p {
+                    color: $text-light;
+                    font-size: 0.95rem;
+                    line-height: 1.5;
+                }
+
+                &.bento-large {
+                    grid-column: span 2;
+                    grid-row: span 2;
+                    justify-content: center;
+
+                    .bento-icon {
+                        font-size: 3rem;
+                        margin-bottom: $spacing-lg;
+                    }
+
+                    h3 { font-size: 1.8rem; }
+                    p { font-size: 1.1rem; }
+
+                    @include responsive(sm) {
+                        grid-column: span 1;
+                    }
+                }
+
+                &.bento-medium {
+                    grid-column: span 2;
+                    grid-row: span 1;
+
+                    @include responsive(sm) {
+                        grid-column: span 1;
+                    }
+                }
+
+                &.bento-small {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                }
+
+                // Variações de fundo
+                &.bg-dark {
+                    background: $b2b-dark;
+                    color: $text-white;
+                    border: none;
+
+                    h3 { color: $text-white; }
+                    p { color: rgba(255,255,255,0.7); }
+                    .bento-icon { color: $b2b-gold; }
+                }
+
+                &.bg-gradient {
+                    background: linear-gradient(135deg, $b2b-accent, #1e40af);
+                    color: $text-white;
+                    border: none;
+
+                    h3 { color: $text-white; }
+                    p { color: rgba(255,255,255,0.8); }
+                    .bento-icon { color: rgba(255,255,255,0.9); }
+                }
+            }
+        }
     }
-    
-    .btn {
-      @include button-base;
-      background: $secondary-color;
-      color: $primary-color;
-      
-      &:hover {
-        background: darken($secondary-color, 5%);
-      }
+
+    // 4. Timeline de Benefícios
+    .b2b-benefits-timeline {
+        padding: $spacing-3xl 0;
+        background: #ffffff;
+
+        .benefits-header {
+            text-align: center;
+            margin-bottom: $spacing-3xl;
+
+            h2 {
+                font-size: 2.2rem;
+                color: $b2b-darker;
+            }
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-2xl;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: $spacing-xl;
+            padding: $spacing-xl;
+            background: $bg-light;
+            border-radius: 20px;
+            border-left: 5px solid $b2b-accent;
+            box-shadow: $shadow-sm;
+
+            @include responsive(sm) {
+                flex-direction: column;
+                text-align: center;
+                border-left: none;
+                border-top: 5px solid $b2b-accent;
+            }
+
+            .timeline-icon {
+                width: 80px;
+                height: 80px;
+                background: rgba($b2b-accent, 0.1);
+                color: $b2b-accent;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2.5rem;
+                flex-shrink: 0;
+            }
+
+            .timeline-content {
+                h3 {
+                    font-size: 1.4rem;
+                    color: $b2b-darker;
+                    margin-bottom: $spacing-xs;
+                }
+                p {
+                    color: $text-light;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+            }
+        }
     }
-  }
+
+    // 5. CTA VIP
+    .b2b-vip-cta {
+        padding: $spacing-3xl 0;
+        background: #ffffff;
+
+        .vip-box {
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=') #020617;
+            border-radius: 30px;
+            padding: $spacing-3xl $spacing-2xl;
+            text-align: center;
+            color: $text-white;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -50%; left: -50%;
+                width: 200%; height: 200%;
+                background: radial-gradient(circle, rgba($b2b-accent,0.15) 0%, transparent 60%);
+                z-index: 1;
+            }
+
+            .vip-content {
+                position: relative;
+                z-index: 2;
+                max-width: 600px;
+                margin: 0 auto;
+
+                h2 {
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                    margin-bottom: $spacing-md;
+
+                    @include responsive(sm) { font-size: 2rem; }
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    margin-bottom: $spacing-2xl;
+                }
+
+                .vip-actions {
+                    .btn-vip-gold {
+                        @include button-base;
+                        background: $b2b-gold;
+                        color: $b2b-darker;
+                        font-size: 1.2rem;
+                        padding: $spacing-md $spacing-xl;
+                        border-radius: 30px;
+                        box-shadow: 0 10px 30px rgba($b2b-gold, 0.3);
+                        margin-bottom: $spacing-md;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        &:hover {
+                            background: lighten($b2b-gold, 10%);
+                            transform: translateY(-3px);
+                        }
+                    }
+
+                    .vip-note {
+                        font-size: 0.85rem;
+                        opacity: 0.5;
+                        margin: 0;
+
+                        i { margin-right: 5px; }
+                    }
+                }
+            }
+        }
+    }
 }

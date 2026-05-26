@@ -1,199 +1,291 @@
 // ========================================
-// PÁGINA DE CLÍNICAS CONVENIADAS
+// PÁGINA DE CLÍNICAS CONVENIADAS (MODERN)
 // ========================================
 
-.clinicas-page {
-  @include section;
-  background: $secondary-color;
-  
-  .page-header {
+// 1. Hero Premium
+.clinicas-hero {
+    position: relative;
+    padding: $spacing-3xl 0;
+    background: url('../img/Globofundoclinicafenix.png') center/cover no-repeat fixed;
+    color: $text-white;
     text-align: center;
-    margin-bottom: $spacing-3xl;
-    
+    margin-bottom: $spacing-2xl;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(135deg, rgba($primary-color, 0.9), rgba($primary-dark, 0.95));
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
     h1 {
-      @include section-title;
-      color: $primary-color;
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: $spacing-sm;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-    
+
     p {
-      @include section-subtitle;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
     }
-  }
-  
-  .filtro-zona {
-    max-width: 800px;
-    margin: 0 auto $spacing-2xl;
+}
+
+.clinicas-page {
+    @include section;
+    padding-top: 0;
+    background: #f8fafc; // Fundo bem clean
     
-    .filtro-buttons {
-      @include flex(row, center, center);
-      gap: $spacing-sm;
-      flex-wrap: wrap;
-      
-      .btn-filtro {
-        padding: $spacing-xs $spacing-md;
-        border: 2px solid $primary-color;
-        background: $secondary-color;
-        color: $primary-color;
-        border-radius: $radius-md;
-        font-weight: $font-weight-medium;
-        cursor: pointer;
-        transition: all $transition-fast;
+    // 2. Filtros Interativos Modernizados
+    .filtro-zona-modern {
+        max-width: 900px;
+        margin: 0 auto $spacing-3xl;
         
-        &:hover, &.active {
-          background: $primary-color;
-          color: $text-white;
-        }
-      }
-    }
-  }
-  
-  .zona-section {
-    margin-bottom: $spacing-3xl;
-    
-    h2 {
-      color: $primary-color;
-      margin-bottom: $spacing-xl;
-      padding-bottom: $spacing-sm;
-      border-bottom: 3px solid $primary-color;
-      display: inline-block;
-    }
-    
-    .clinicas-grid {
-      @include grid(2, $spacing-lg);
-    }
-    
-    .clinica-card {
-      @include card;
-      @include flex(row, flex-start, flex-start);
-      gap: $spacing-md;
-      
-      @include responsive(md) {
-        flex-direction: column;
-      }
-      
-      .icon {
-        width: 60px;
-        height: 60px;
-        flex-shrink: 0;
-        background: $gradient-primary;
-        border-radius: 50%;
-        @include flex(row, center, center);
-        font-size: $font-size-2xl;
-        color: $text-white;
-      }
-      
-      .clinica-info {
-        flex: 1;
-        
-        h3 {
-          color: $primary-color;
-          margin-bottom: $spacing-xs;
-          font-size: $font-size-lg;
-        }
-        
-        .localizacao {
-          color: $text-light;
-          font-size: $font-size-sm;
-          margin-bottom: $spacing-sm;
-          @include flex(row, center, flex-start);
-          gap: $spacing-xs;
-          
-          &::before {
-            content: '📍';
-          }
-        }
-        
-        .especialidades {
-          margin-top: $spacing-sm;
-          
-          h4 {
-            font-size: $font-size-sm;
-            color: $text-dark;
-            margin-bottom: $spacing-xs;
-            font-weight: $font-weight-semibold;
-          }
-          
-          .tags {
-            @include flex(row, center, flex-start);
-            gap: $spacing-xs;
+        .filtro-buttons {
+            @include flex(row, center, center);
+            gap: $spacing-sm;
             flex-wrap: wrap;
             
-            .tag {
-              font-size: $font-size-xs;
-              padding: 2px $spacing-xs;
-              background: rgba($primary-color, 0.1);
-              color: $primary-color;
-              border-radius: $radius-sm;
+            .btn-filtro {
+                padding: 10px 24px;
+                border: 1px solid rgba($primary-color, 0.2);
+                background: $text-white;
+                color: $text-dark;
+                border-radius: 30px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                cursor: pointer;
+                transition: all $transition-base;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+                
+                &:hover {
+                    background: rgba($primary-color, 0.05);
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+                }
+
+                &.active {
+                    background: linear-gradient(135deg, $primary-color, $primary-dark);
+                    color: $text-white;
+                    border-color: transparent;
+                    box-shadow: 0 8px 25px rgba($primary-color, 0.3);
+                }
             }
-          }
         }
-      }
-    }
-  }
-  
-  .mapa-section {
-    margin-top: $spacing-3xl;
-    padding: $spacing-2xl;
-    background: $bg-light;
-    border-radius: $radius-lg;
-    text-align: center;
-    
-    h2 {
-      color: $primary-color;
-      margin-bottom: $spacing-md;
     }
     
-    p {
-      color: $text-light;
-      margin-bottom: $spacing-lg;
+    // 3. Seções e Grid
+    .zona-section {
+        margin-bottom: $spacing-3xl;
+        
+        h2 {
+            color: $primary-dark;
+            margin-bottom: $spacing-xl;
+            padding-bottom: $spacing-sm;
+            border-bottom: 2px solid rgba($primary-color, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+
+            i {
+                color: $primary-color;
+                font-size: 1.5rem;
+            }
+        }
+        
+        .clinicas-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: $spacing-xl;
+
+            @include responsive(lg) { grid-template-columns: 1fr; }
+        }
+        
+        // 4. Cartões Modernos (Glass/Bento style)
+        .clinica-card-modern {
+            background: $text-white;
+            border-radius: 1.5rem;
+            padding: $spacing-lg;
+            display: flex;
+            align-items: flex-start;
+            gap: $spacing-lg;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all $transition-base;
+            position: relative;
+            overflow: hidden;
+            
+            @include responsive(md) {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+                border-color: rgba($primary-color, 0.15);
+                
+                .icon {
+                    transform: scale(1.1);
+                    background: linear-gradient(135deg, $primary-color, $primary-dark);
+                    color: $text-white;
+                }
+            }
+            
+            .icon {
+                width: 60px;
+                height: 60px;
+                flex-shrink: 0;
+                background: rgba($primary-color, 0.08);
+                color: $primary-color;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.6rem;
+                transition: all $transition-base;
+            }
+            
+            .clinica-info {
+                flex: 1;
+                width: 100%;
+                
+                h3 {
+                    color: $text-dark;
+                    margin-bottom: $spacing-md;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    @include responsive(md) { justify-content: center; }
+
+                    &::before {
+                        content: '📍';
+                        font-size: 1.1rem;
+                    }
+                }
+                
+                .especialidades {
+                    h4 {
+                        font-size: 0.9rem;
+                        color: $text-light;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: $spacing-sm;
+                        font-weight: 600;
+                    }
+                    
+                    .tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+
+                        @include responsive(md) { justify-content: center; }
+                        
+                        .tag {
+                            font-size: 0.8rem;
+                            padding: 4px 12px;
+                            background: rgba($secondary-color, 0.15);
+                            color: $primary-dark;
+                            border-radius: 20px;
+                            font-weight: 600;
+                            border: 1px solid rgba($secondary-color, 0.3);
+                            transition: all 0.2s ease;
+
+                            &:hover {
+                                background: $primary-color;
+                                color: $text-white;
+                                border-color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
-    .mapa-container {
-      width: 100%;
-      height: 500px;
-      border-radius: $radius-md;
-      overflow: hidden;
-      box-shadow: $shadow-lg;
-      
-      @include responsive(md) {
-        height: 350px;
-      }
-      
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
+    // 5. Seção de Mapa Otimizada
+    .mapa-section {
+        margin-top: $spacing-3xl;
+        padding: $spacing-3xl;
+        background: $text-white;
+        border-radius: 2rem;
+        text-align: center;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+        border: 1px solid rgba(0,0,0,0.03);
+        
+        h2 {
+            color: $primary-dark;
+            margin-bottom: $spacing-sm;
+            font-weight: 800;
+        }
+        
+        p {
+            color: $text-light;
+            margin-bottom: $spacing-2xl;
+            font-size: 1.1rem;
+        }
+        
+        .mapa-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+            border: 10px solid #f8fafc;
+            
+            @include responsive(md) { height: 300px; }
+            
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        }
     }
-  }
-  
-  .cta-clinicas {
-    text-align: center;
-    margin-top: $spacing-3xl;
-    padding: $spacing-2xl;
-    background: $gradient-primary;
-    border-radius: $radius-xl;
-    color: $text-white;
     
-    h2 {
-      color: $text-white;
-      margin-bottom: $spacing-md;
+    // 6. CTA Moderno
+    .cta-clinicas {
+        text-align: center;
+        margin-top: $spacing-3xl;
+        padding: $spacing-3xl;
+        background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+        border-radius: 2rem;
+        color: $text-white;
+        box-shadow: 0 20px 40px rgba($primary-color, 0.2);
+        
+        h2 {
+            color: $text-white;
+            margin-bottom: $spacing-md;
+            font-weight: 800;
+        }
+        
+        p {
+            font-size: 1.15rem;
+            margin-bottom: $spacing-2xl;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            @extend .btn-secondary; // Reaproveitando do _buttons.scss
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
     }
-    
-    p {
-      font-size: $font-size-lg;
-      margin-bottom: $spacing-xl;
-      opacity: 0.95;
-    }
-    
-    .btn {
-      @include button-base;
-      background: $secondary-color;
-      color: $primary-color;
-      
-      &:hover {
-        background: darken($secondary-color, 5%);
-      }
-    }
-  }
 }

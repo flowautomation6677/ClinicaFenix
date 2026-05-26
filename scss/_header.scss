@@ -7,18 +7,23 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: $secondary-color;
-  box-shadow: $shadow-md;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   z-index: $z-header;
   transition: all $transition-base;
   
   &.scrolled {
-    box-shadow: $shadow-lg;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
   
   .header-container {
     @include flex(row, center, space-between);
-    padding: $spacing-sm 0;
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
     position: relative;
     z-index: $z-header + 3;
   }

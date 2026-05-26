@@ -105,44 +105,114 @@ window.addEventListener('scroll', function() {
 });
 
 // ========================================
-// BUSCA DE ESPECIALIDADES
+// BUSCA DE ESPECIALIDADES E FILTROS (PÍLULAS)
 // ========================================
 const searchEspecialidade = document.getElementById('searchEspecialidade');
-if (searchEspecialidade) {
+const especialidadeCards = document.querySelectorAll('.esp-card-modern');
+const categoryPills = document.querySelectorAll('.category-pills .pill');
+
+// Função para filtrar os cartões
+function filterEspecialidades(searchTerm, category) {
+    especialidadeCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const cardCategory = card.getAttribute('data-category');
+        
+        const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+        const matchesCategory = category === 'todas' || cardCategory === category;
+        
+        if (matchesSearch && matchesCategory) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Evento de digitação na busca
+if (searchEspecialidade && especialidadeCards.length > 0) {
     searchEspecialidade.addEventListener('input', function(e) {
         const searchTerm = e.target.value.toLowerCase();
-        const especialidadeItems = document.querySelectorAll('.especialidade-item');
-        
-        especialidadeItems.forEach(item => {
-            const title = item.querySelector('h3').textContent.toLowerCase();
-            const description = item.querySelector('p').textContent.toLowerCase();
+        const activeCategory = document.querySelector('.category-pills .pill.active')?.getAttribute('data-category') || 'todas';
+        filterEspecialidades(searchTerm, activeCategory);
+    });
+}
+
+// Evento de clique nas pílulas (categorias)
+if (categoryPills.length > 0 && especialidadeCards.length > 0) {
+    categoryPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+            // Remover classe active de todas
+            categoryPills.forEach(p => p.classList.remove('active'));
+            // Adicionar na clicada
+            this.classList.add('active');
             
-            if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                item.style.display = 'flex';
-            } else {
-                item.style.display = 'none';
-            }
+            const category = this.getAttribute('data-category');
+            const searchTerm = searchEspecialidade ? searchEspecialidade.value.toLowerCase() : '';
+            
+            filterEspecialidades(searchTerm, category);
         });
     });
 }
 
 // ========================================
-// BUSCA DE EXAMES
+// BUSCA DE EXAMES E FILTROS (PÍLULAS)
 // ========================================
-const searchExame = document.getElementById('searchExame');
-if (searchExame) {
-    searchExame.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const exameCards = document.querySelectorAll('.exame-card');
+const searchExameModern = document.getElementById('searchExameModern');
+const exameCardsModern = document.querySelectorAll('.exame-card-modern');
+const examesCategoryPills = document.querySelectorAll('.exames-page-modern .category-pills .pill');
+const noResultsExames = document.getElementById('noResultsExames');
+
+function filterExames(searchTerm, category) {
+    let hasVisibleCards = false;
+
+    exameCardsModern.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const cardCategory = card.getAttribute('data-category');
         
-        exameCards.forEach(card => {
-            const title = card.querySelector('h4').textContent.toLowerCase();
+        const matchesSearch = title.includes(searchTerm);
+        const matchesCategory = category === 'todas' || cardCategory === category;
+        
+        if (matchesSearch && matchesCategory) {
+            card.style.display = 'flex';
+            hasVisibleCards = true;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    // Mostrar ou esconder mensagem de "Nenhum resultado"
+    if (noResultsExames) {
+        if (!hasVisibleCards) {
+            noResultsExames.style.display = 'block';
+        } else {
+            noResultsExames.style.display = 'none';
+        }
+    }
+}
+
+// Evento de digitação na busca de Exames
+if (searchExameModern && exameCardsModern.length > 0) {
+    searchExameModern.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const activeCategory = document.querySelector('.exames-page-modern .category-pills .pill.active')?.getAttribute('data-category') || 'todas';
+        filterExames(searchTerm, activeCategory);
+    });
+}
+
+// Evento de clique nas pílulas (categorias de Exames)
+if (examesCategoryPills.length > 0 && exameCardsModern.length > 0) {
+    examesCategoryPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+            // Remover classe active de todas as pílulas de exame
+            examesCategoryPills.forEach(p => p.classList.remove('active'));
+            // Adicionar na clicada
+            this.classList.add('active');
             
-            if (title.includes(searchTerm)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+            const category = this.getAttribute('data-category');
+            const searchTerm = searchExameModern ? searchExameModern.value.toLowerCase() : '';
+            
+            filterExames(searchTerm, category);
         });
     });
 }
@@ -214,16 +284,20 @@ if (contactForm) {
         }
         
         // Simular envio (em produção, integrar com backend)
-        const submitButton = contactForm.querySelector('.btn-submit');
-        submitButton.disabled = true;
-        submitButton.textContent = 'Enviando...';
+        const submitButton = contactForm.querySelector('.btn-submit, .btn-submit-modern');
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
+        }
         
         // Simular delay de envio
         setTimeout(() => {
             showFormMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
             contactForm.reset();
-            submitButton.disabled = false;
-            submitButton.textContent = 'Enviar Mensagem';
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Mensagem <i class="fas fa-paper-plane"></i>';
+            }
             
             // Opcional: Redirecionar para WhatsApp
             const whatsappMessage = `Olá! Meu nome é ${nome}. ${mensagem}`;

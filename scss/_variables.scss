@@ -4,13 +4,17 @@
 
 // Cores Principais
 $primary-color: #215df9;
+$primary-dark: #123eab;
+$primary-light: #e6edff;
 $secondary-color: #ffffff;
 $text-dark: #1a1a1a;
 $text-light: #666666;
+$text-light-gray: #a0a0a0;
 $text-white: #ffffff;
 $bg-light: #f8f9fa;
 $bg-gray: #e9ecef;
 $border-color: #dee2e6;
+$success-color: #00A988; // Green from Cartao de Todos for checks
 
 // Gradientes
 $gradient-primary: linear-gradient(135deg, $primary-color 0%, #1a4ac9 100%);

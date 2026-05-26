@@ -1,151 +1,343 @@
 // ========================================
-// PÁGINA DE EXAMES
+// PÁGINA DE EXAMES (MODERNIZADA)
 // ========================================
 
-.exames-page {
-  @include section;
-  background: $secondary-color;
-  
-  .page-header {
-    text-align: center;
-    margin-bottom: $spacing-3xl;
-    
-    h1 {
-      @include section-title;
-      color: $primary-color;
-    }
-    
-    p {
-      @include section-subtitle;
-    }
-  }
-  
-  .search-bar {
-    max-width: 700px;
-    margin: 0 auto $spacing-2xl;
-    position: relative;
-    
-    input {
-      width: 100%;
-      padding: $spacing-md $spacing-lg;
-      padding-right: 50px;
-      border: 2px solid $border-color;
-      border-radius: $radius-md;
-      font-size: $font-size-base;
-      transition: all $transition-fast;
-      
-      &:focus {
-        outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
-      }
-    }
-    
-    .search-icon {
-      position: absolute;
-      right: $spacing-md;
-      top: 50%;
-      transform: translateY(-50%);
-      color: $text-light;
-      font-size: $font-size-xl;
-    }
-  }
-  
-  .exames-categoria {
-    margin-bottom: $spacing-3xl;
-    
-    h2 {
-      color: $primary-color;
-      margin-bottom: $spacing-lg;
-      padding-bottom: $spacing-sm;
-      border-bottom: 3px solid $primary-color;
-      display: inline-block;
-    }
-    
-    .exames-grid {
-      @include grid(4, $spacing-md);
-      margin-top: $spacing-lg;
-    }
-    
-    .exame-card {
-      background: $bg-light;
-      padding: $spacing-md;
-      border-radius: $radius-md;
-      text-align: center;
-      transition: all $transition-base;
-      cursor: pointer;
-      border: 2px solid transparent;
-      
-      &:hover {
-        background: $primary-color;
-        color: $text-white;
-        transform: translateY(-5px);
-        box-shadow: $shadow-lg;
-        border-color: $primary-color;
-      }
-      
-      .icon {
-        font-size: $font-size-2xl;
-        margin-bottom: $spacing-xs;
-      }
-      
-      h4 {
-        font-size: $font-size-sm;
-        font-weight: $font-weight-semibold;
-      }
-    }
-  }
-  
-  .info-box {
+.exames-page-modern {
     background: $bg-light;
-    padding: $spacing-xl;
-    border-radius: $radius-lg;
-    border-left: 4px solid $primary-color;
-    margin-top: $spacing-2xl;
-    
-    h3 {
-      color: $primary-color;
-      margin-bottom: $spacing-md;
+    min-height: 100vh;
+    padding-bottom: $spacing-3xl;
+
+    // 1. Hero Banner Premium
+    .exames-hero {
+        position: relative;
+        padding: $spacing-3xl 0;
+        background: url('../img/Globofundoclinicafenix.png') center/cover no-repeat fixed;
+        color: $text-white;
+        text-align: center;
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba($primary-color, 0.9) 0%, rgba(#0f172a, 0.95) 100%);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: $spacing-sm;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+            .highlight {
+                color: $secondary-color;
+            }
+
+            @include responsive(sm) { font-size: 2.2rem; }
+        }
+
+        p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto $spacing-2xl;
+            opacity: 0.9;
+        }
+
+        // Barra de busca
+        .modern-search {
+            max-width: 600px;
+            margin: 0 auto $spacing-xl;
+            position: relative;
+
+            .search-icon {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $text-light;
+                font-size: 1.2rem;
+                z-index: 10;
+            }
+
+            input {
+                width: 100%;
+                padding: 18px 20px 18px 50px;
+                border: none;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                transition: all $transition-base;
+                color: $text-dark;
+
+                &:focus {
+                    outline: none;
+                    background: #ffffff;
+                    box-shadow: 0 0 0 4px rgba($secondary-color, 0.5);
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+        // Pílulas de filtro
+        .category-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: $spacing-sm;
+
+            .pill {
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: $text-white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                font-size: 0.95rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all $transition-base;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.25);
+                    transform: translateY(-2px);
+                }
+
+                &.active {
+                    background: $secondary-color;
+                    color: $primary-color;
+                    border-color: $secondary-color;
+                    font-weight: 700;
+                    box-shadow: 0 5px 15px rgba($secondary-color, 0.4);
+                }
+            }
+        }
     }
-    
-    p {
-      color: $text-light;
-      line-height: 1.8;
-      margin-bottom: $spacing-md;
+
+    // 2. Grade de Exames Unificada
+    .exames-content {
+        margin-top: -$spacing-2xl;
+        position: relative;
+        z-index: 10;
+
+        .exames-unified-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: $spacing-lg;
+            margin-bottom: $spacing-3xl;
+        }
+
+        .exame-card-modern {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: $spacing-xl $spacing-lg;
+            display: flex;
+            align-items: flex-start;
+            gap: $spacing-md;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: all $transition-base;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+                border-color: rgba($primary-color, 0.2);
+
+                .card-icon {
+                    background: $primary-color;
+                    color: $text-white;
+                    transform: scale(1.1);
+                }
+            }
+
+            // Etiqueta de Rede Parceira
+            .badge-partner {
+                position: absolute;
+                top: 0; right: 0;
+                background: linear-gradient(90deg, #fbbf24, #d97706);
+                color: #fff;
+                font-size: 0.7rem;
+                font-weight: 700;
+                padding: 4px 12px;
+                border-bottom-left-radius: 12px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                box-shadow: -2px 2px 10px rgba(0,0,0,0.1);
+                
+                i { margin-right: 4px; }
+            }
+
+            .card-icon {
+                width: 50px; height: 50px;
+                flex-shrink: 0;
+                background: rgba($primary-color, 0.08);
+                color: $primary-color;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                transition: all $transition-base;
+            }
+
+            .card-info {
+                flex: 1;
+
+                h3 {
+                    font-size: 1.1rem;
+                    color: $text-dark;
+                    margin-bottom: $spacing-sm;
+                    line-height: 1.3;
+                }
+
+                .btn-agendar-sm {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    color: $primary-color;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    text-decoration: none;
+                    padding: 4px 0;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0; left: 0;
+                        width: 0; height: 2px;
+                        background: $primary-color;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        // Mensagem de "Nenhum Resultado"
+        .no-results-msg {
+            text-align: center;
+            padding: $spacing-3xl;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: $shadow-sm;
+
+            i {
+                font-size: 3rem;
+                color: $text-light;
+                margin-bottom: $spacing-md;
+            }
+            
+            h3 {
+                color: $text-dark;
+                margin-bottom: $spacing-xs;
+            }
+
+            p {
+                color: $text-light;
+                max-width: 500px;
+                margin: 0 auto $spacing-lg;
+            }
+
+            .btn-primary-small {
+                @include button-base;
+                background: $primary-color;
+                color: $text-white;
+                padding: 10px 20px;
+            }
+        }
+
+        // 3. Info Box Modernizado
+        .info-box-modern {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: $spacing-2xl;
+            display: flex;
+            align-items: flex-start;
+            gap: $spacing-lg;
+            margin-bottom: $spacing-3xl;
+
+            @include responsive(sm) {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .info-icon {
+                font-size: 2.5rem;
+                color: $primary-color;
+                background: #fff;
+                width: 60px; height: 60px;
+                display: flex; align-items: center; justify-content: center;
+                border-radius: 50%;
+                box-shadow: $shadow-sm;
+                flex-shrink: 0;
+            }
+
+            .info-text {
+                h3 {
+                    color: $text-dark;
+                    font-size: 1.3rem;
+                    margin-bottom: $spacing-xs;
+                }
+
+                p {
+                    color: $text-light;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+            }
+        }
+
+        // 4. CTA VIP
+        .cta-vip-box {
+            background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+            border-radius: 24px;
+            padding: $spacing-3xl;
+            text-align: center;
+            color: $text-white;
+            box-shadow: 0 20px 40px rgba($primary-color, 0.3);
+
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: $spacing-sm;
+            }
+
+            p {
+                font-size: 1.1rem;
+                opacity: 0.9;
+                max-width: 600px;
+                margin: 0 auto $spacing-2xl;
+            }
+
+            .btn-vip-light {
+                @include button-base;
+                background: #ffffff;
+                color: $primary-color;
+                font-size: 1.1rem;
+                padding: 15px 30px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+                i { margin-right: 8px; font-size: 1.2rem; }
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+                }
+            }
+        }
     }
-    
-    .btn {
-      @include button-primary;
-    }
-  }
-  
-  .cta-exames {
-    text-align: center;
-    margin-top: $spacing-3xl;
-    padding: $spacing-2xl;
-    background: $gradient-primary;
-    border-radius: $radius-xl;
-    color: $text-white;
-    
-    h2 {
-      color: $text-white;
-      margin-bottom: $spacing-md;
-    }
-    
-    p {
-      font-size: $font-size-lg;
-      margin-bottom: $spacing-xl;
-      opacity: 0.95;
-    }
-    
-    .btn {
-      @include button-base;
-      background: $secondary-color;
-      color: $primary-color;
-      
-      &:hover {
-        background: darken($secondary-color, 5%);
-      }
-    }
-  }
 }

@@ -41,249 +41,327 @@
         <div class="menu-overlay" id="menuOverlay"></div>
     </header>
 
-    <!-- Página de Exames -->
-    <section class="exames-page" style="background-image: url('img/Globofundoclinicafenix.png'); background-size: cover; background-position: center;">
-        <div class="container">
-            <div class="page-header" data-aos="fade-up">
-                <h1>Exames Disponíveis</h1>
-                <p>Realizamos uma ampla variedade de exames laboratoriais, de imagem e ocupacionais em nossa matriz e em clínicas parceiras</p>
+    <!-- Página de Exames Modernizada -->
+    <section class="exames-page-modern">
+        <!-- Hero Premium -->
+        <div class="exames-hero">
+            <div class="hero-overlay"></div>
+            <div class="container" data-aos="fade-up">
+                <h1>Exames de <span class="highlight">Alta Precisão</span></h1>
+                <p>Tecnologia de ponta em exames laboratoriais, de imagem e ocupacionais. Realize tudo na Clínica Fenix ou em nossa ampla rede parceira credenciada.</p>
+                
+                <!-- Barra de Busca -->
+                <div class="modern-search">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchExameModern" placeholder="Digite o nome do exame (ex: Ultrassom)..." />
+                </div>
+
+                <!-- Filtros (Pills) -->
+                <div class="category-pills">
+                    <button class="pill active" data-category="todas">Todos</button>
+                    <button class="pill" data-category="imagem"><i class="fas fa-x-ray"></i> Imagem</button>
+                    <button class="pill" data-category="laboratorio"><i class="fas fa-flask"></i> Laboratoriais</button>
+                    <button class="pill" data-category="cardio"><i class="fas fa-heartbeat"></i> Cardiológicos</button>
+                    <button class="pill" data-category="ocupacional"><i class="fas fa-hard-hat"></i> Ocupacionais</button>
+                    <button class="pill" data-category="geral"><i class="fas fa-stethoscope"></i> Gerais & Procedimentos</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container exames-content">
+            <!-- Grid Unificada -->
+            <div class="exames-unified-grid" id="examesGrid">
+                
+                <!-- Acuidade Visual -->
+                <div class="exame-card-modern" data-category="ocupacional" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <div class="card-info">
+                        <h3>Acuidade Visual</h3>
+                        <a href="https://wa.me/5521991685938?text=Olá, gostaria de agendar um exame de Acuidade Visual." target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Audiometria -->
+                <div class="exame-card-modern" data-category="ocupacional" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-music"></i></div>
+                    <div class="card-info">
+                        <h3>Audiometria</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Avaliação Psicossocial -->
+                <div class="exame-card-modern" data-category="ocupacional" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <div class="card-info">
+                        <h3>Avaliação Psicossocial</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Aplicação de Varizes -->
+                <div class="exame-card-modern" data-category="geral" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-syringe"></i></div>
+                    <div class="card-info">
+                        <h3>Aplicação de Varizes</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Eletrocardiograma -->
+                <div class="exame-card-modern" data-category="cardio" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-heart"></i></div>
+                    <div class="card-info">
+                        <h3>Eletrocardiograma (ECG)</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Eletroencefalograma -->
+                <div class="exame-card-modern" data-category="geral" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <div class="card-info">
+                        <h3>Eletroencefalograma</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Exames Laboratoriais -->
+                <div class="exame-card-modern" data-category="laboratorio" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="card-info">
+                        <h3>Exames Laboratoriais de Sangue</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- MAPA 24h -->
+                <div class="exame-card-modern" data-category="cardio" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="card-info">
+                        <h3>MAPA 24h</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Holter -->
+                <div class="exame-card-modern" data-category="cardio" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                    <div class="card-info">
+                        <h3>Holter 24h</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Preventivo -->
+                <div class="exame-card-modern" data-category="geral" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-female"></i></div>
+                    <div class="card-info">
+                        <h3>Preventivo (Papanicolau)</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Raio X -->
+                <div class="exame-card-modern" data-category="imagem" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-bone"></i></div>
+                    <div class="card-info">
+                        <h3>Raio X Digital</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Infiltração -->
+                <div class="exame-card-modern" data-category="geral" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-syringe"></i></div>
+                    <div class="card-info">
+                        <h3>Infiltração</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Impedanciometria -->
+                <div class="exame-card-modern" data-category="geral" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <div class="card-info">
+                        <h3>Impedanciometria</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Testes Alérgicos -->
+                <div class="exame-card-modern" data-category="laboratorio" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-head-side-mask"></i></div>
+                    <div class="card-info">
+                        <h3>Testes Alérgicos</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Toxicológico -->
+                <div class="exame-card-modern" data-category="laboratorio" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-car"></i></div>
+                    <div class="card-info">
+                        <h3>Exame Toxicológico (CNH/CLT)</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Ultrassonografia -->
+                <div class="exame-card-modern" data-category="imagem" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-images"></i></div>
+                    <div class="card-info">
+                        <h3>Ultrassonografia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- ===== EXAMES PARCEIROS ===== -->
+                
+                <!-- Balão Intragástrico -->
+                <div class="exame-card-modern partner-card" data-category="geral" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-procedures"></i></div>
+                    <div class="card-info">
+                        <h3>Balão Intragástrico</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Biópsia -->
+                <div class="exame-card-modern partner-card" data-category="laboratorio" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="card-info">
+                        <h3>Biópsia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Cintilografia -->
+                <div class="exame-card-modern partner-card" data-category="imagem" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-radiation"></i></div>
+                    <div class="card-info">
+                        <h3>Cintilografia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Colposcopia -->
+                <div class="exame-card-modern partner-card" data-category="geral" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-search-plus"></i></div>
+                    <div class="card-info">
+                        <h3>Colposcopia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Densitometria -->
+                <div class="exame-card-modern partner-card" data-category="imagem" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-bone"></i></div>
+                    <div class="card-info">
+                        <h3>Densitometria Óssea</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Eletroneuromiografia -->
+                <div class="exame-card-modern partner-card" data-category="geral" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="card-info">
+                        <h3>Eletroneuromiografia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Endoscopia -->
+                <div class="exame-card-modern partner-card" data-category="imagem" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-video"></i></div>
+                    <div class="card-info">
+                        <h3>Endoscopia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Ergometria -->
+                <div class="exame-card-modern partner-card" data-category="cardio" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-running"></i></div>
+                    <div class="card-info">
+                        <h3>Teste Ergométrico (Esteira)</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Histeroscopia -->
+                <div class="exame-card-modern partner-card" data-category="geral" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-search-plus"></i></div>
+                    <div class="card-info">
+                        <h3>Histeroscopia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Mamografia -->
+                <div class="exame-card-modern partner-card" data-category="imagem" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
+                    <div class="card-info">
+                        <h3>Mamografia</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Ressonância -->
+                <div class="exame-card-modern partner-card" data-category="imagem" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-magnet"></i></div>
+                    <div class="card-info">
+                        <h3>Ressonância Magnética</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Tomografia -->
+                <div class="exame-card-modern partner-card" data-category="imagem" data-aos="fade-up">
+                    <div class="badge-partner"><i class="fas fa-handshake"></i> Rede Parceira</div>
+                    <div class="card-icon"><i class="fas fa-laptop-medical"></i></div>
+                    <div class="card-info">
+                        <h3>Tomografia Computadorizada</h3>
+                        <a href="https://wa.me/5521991685938" target="_blank" class="btn-agendar-sm"><i class="fab fa-whatsapp"></i> Agendar</a>
+                    </div>
+                </div>
+
             </div>
             
-            <div class="search-bar" data-aos="fade-up">
-                <input type="text" id="searchExame" placeholder="Buscar exame..." />
-                <span class="search-icon"><i class="fas fa-search"></i></span>
+            <!-- Mensagem caso não encontre -->
+            <div id="noResultsExames" class="no-results-msg" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>Nenhum exame encontrado</h3>
+                <p>Não se preocupe! Temos parcerias com diversos laboratórios. Entre em contato e verificaremos a disponibilidade para você.</p>
+                <a href="https://wa.me/5521991685938" target="_blank" class="btn-primary-small">Consultar Disponibilidade</a>
             </div>
-            
-            <!-- Exames na Matriz -->
-            <div class="exames-categoria">
-                <h2 data-aos="fade-right"><i class="fas fa-hospital"></i> Exames Disponíveis na Matriz</h2>
-                <div class="exames-grid" id="examesMatriz">
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="50">
-                        <div class="icon"><i class="fas fa-eye"></i></div>
-                        <h4>Acuidade Visual</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon"><i class="fas fa-music"></i></div>
-                        <h4>Audiometria</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="150">
-                        <div class="icon"><i class="fas fa-brain"></i></div>
-                        <h4>Avaliação Psicossocial</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon"><i class="fas fa-syringe"></i></div>
-                        <h4>Aplicação de Varizes</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="250">
-                        <div class="icon"><i class="fas fa-heart"></i></div>
-                        <h4>Eletrocardiograma</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon"><i class="fas fa-brain"></i></div>
-                        <h4>Eletroencefalograma</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="350">
-                        <div class="icon"><i class="fas fa-microscope"></i></div>
-                        <h4>Exames Laboratoriais</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="icon"><i class="fas fa-chart-bar"></i></div>
-                        <h4>MAPA 24h</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="450">
-                        <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                        <h4>Holter</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="icon"><i class="fas fa-female"></i></div>
-                        <h4>Preventivo</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="550">
-                        <div class="icon"><i class="fas fa-bone"></i></div>
-                        <h4>Raio X</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="icon"><i class="fas fa-syringe"></i></div>
-                        <h4>Infiltração</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="650">
-                        <div class="icon"><i class="fas fa-satellite-dish"></i></i></div>
-                        <h4>Impedanciometria</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="700">
-                        <div class="icon"><i class="fas fa-music"></i></div>
-                        <h4>Imitanciometria</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="750">
-                        <div class="icon"><i class="fas fa-person"></i></div>
-                        <h4>Teste Romberg</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="800">
-                        <div class="icon"><i class="fas fa-head-side-mask"></i></div>
-                        <h4>Testes Alérgicos</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="850">
-                        <div class="icon"><i class="fas fa-car"></i></div>
-                        <h4>Toxicológico</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="900">
-                        <div class="icon"><i class="fas fa-satellite-dish"></i></div>
-                        <h4>Ultrassonografia</h4>
-                    </div>
+
+            <!-- Info Box Modern -->
+            <div class="info-box-modern" data-aos="fade-up">
+                <div class="info-icon"><i class="fas fa-info-circle"></i></div>
+                <div class="info-text">
+                    <h3>Rede Credenciada e Preparos</h3>
+                    <p>Todos os exames exigem agendamento prévio e podem necessitar de preparo especial (como jejum). Os exames marcados com a etiqueta dourada <strong>"Rede Parceira"</strong> são realizados em clínicas conveniadas próximas a você.</p>
                 </div>
             </div>
             
-            <!-- Exames nas Clínicas Parceiras -->
-            <div class="exames-categoria">
-                <h2 data-aos="fade-right"><i class="fas fa-building"></i> Exames nas Clínicas Parceiras</h2>
-                <div class="exames-grid" id="examesParceiras">
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="50">
-                        <div class="icon"><i class="fas fa-search-plus"></i></div>
-                        <h4>Balão Intragástrico</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon"><i class="fas fa-microscope"></i></div>
-                        <h4>Biópsia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="150">
-                        <div class="icon"><i class="fas fa-radiation"></i></div>
-                        <h4>Cintilografia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon"><i class="fas fa-search-plus"></i></div>
-                        <h4>Colposcopia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="250">
-                        <div class="icon"><i class="fas fa-bone"></i></div>
-                        <h4>Densitometria</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon"><i class="fas fa-bolt"></i></div>
-                        <h4>Eletroneuromiografia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="350">
-                        <div class="icon"><i class="fas fa-video"></i></div>
-                        <h4>Endoscopia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="icon"><i class="fas fa-running"></i></div>
-                        <h4>Ergometria</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="450">
-                        <div class="icon"><i class="fas fa-microscope"></i></div>
-                        <h4>Histeroscopia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                        <h4>Holter</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="550">
-                        <div class="icon"><i class="fas fa-brain"></i></div>
-                        <h4>Mapeamento Cerebral</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="icon"><i class="fas fa-video"></i></div>
-                        <h4>Retossigmoidoscopia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="650">
-                        <div class="icon">👶</div>
-                        <h4>USG Translucência Nucal</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="700">
-                        <div class="icon"><i class="fas fa-microphone"></i></div>
-                        <h4>Vídeo Laringoscopia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="750">
-                        <div class="icon"><i class="fas fa-eye"></i></div>
-                        <h4>Vectoelectronistagmografia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="800">
-                        <div class="icon"><i class="fas fa-stethoscope"></i></div>
-                        <h4>Mamografia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="850">
-                        <div class="icon"><i class="fas fa-chart-bar"></i></div>
-                        <h4>Manometria</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="900">
-                        <div class="icon"><i class="fas fa-syringe"></i></div>
-                        <h4>Punção</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="950">
-                        <div class="icon"><i class="fas fa-chart-line"></i></div>
-                        <h4>pHmetria</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1000">
-                        <div class="icon"><i class="fas fa-magnet"></i></div>
-                        <h4>Ressonância</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1050">
-                        <div class="icon"><i class="fas fa-video"></i></div>
-                        <h4>Retossigmóide</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1100">
-                        <div class="icon"><i class="fas fa-laptop"></i></div>
-                        <h4>Tomografia</h4>
-                    </div>
-                    
-                    <div class="exame-card" data-aos="zoom-in" data-aos-delay="1150">
-                        <div class="icon"><i class="fas fa-search-plus"></i></div>
-                        <h4>Vulvoscopia</h4>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Info Box -->
-            <div class="info-box" data-aos="fade-up">
-                <h3><i class="fas fa-clipboard-list"></i> Informações Importantes</h3>
-                <p>Todos os exames são realizados com equipamentos modernos e por profissionais qualificados. Os exames disponíveis nas clínicas parceiras são realizados em unidades conveniadas estrategicamente localizadas para facilitar seu acesso.</p>
-                <p>Para agendar seu exame ou obter mais informações sobre preparos e procedimentos, entre em contato conosco.</p>
-                <a href="https://wa.me/5521991685938" class="btn" target="_blank">Agendar Exame</a>
-            </div>
-            
-            <!-- CTA -->
-            <div class="cta-exames" data-aos="zoom-in">
-                <h2>Precisa Realizar um Exame?</h2>
-                <p>Agende agora mesmo e conte com a qualidade e agilidade da Clínica Fenix</p>
-                <a href="https://wa.me/5521991685938" class="btn" target="_blank">Agendar pelo WhatsApp</a>
+            <!-- CTA VIP -->
+            <div class="cta-vip-box" data-aos="zoom-in">
+                <h2>Saúde não espera. Agende agora!</h2>
+                <p>Nossa central de atendimento tira todas as suas dúvidas sobre convênios, preços particulares e preparo em minutos.</p>
+                <a href="https://wa.me/5521991685938" class="btn-vip-light" target="_blank"><i class="fab fa-whatsapp"></i> Agendar via WhatsApp</a>
             </div>
         </div>
     </section>

@@ -17,7 +17,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.min.css">
@@ -27,7 +27,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header shadow-sm">
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <img src="img/LogoClinicaFenix.png" alt="Clínica Fenix">
@@ -36,12 +36,13 @@
             <nav class="nav" id="nav">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="especialidades.html" class="nav-link">Especialidades</a>
-                <a href="medicina-ocupacional.html" class="nav-link">Medicina Ocupacional</a>
+                <a href="medicina-ocupacional.html" class="nav-link">Ocupacional</a>
                 <a href="exames.html" class="nav-link">Exames</a>
                 <a href="convenios.html" class="nav-link">Convênios</a>
                 <a href="clinicas-conveniadas.html" class="nav-link">Clínicas</a>
                 <a href="contato.html" class="nav-link">Contato</a>
-                <a href="https://wa.me/5521991685938" class="btn-agendar" target="_blank">Agendar Consulta</a>
+                
+                <a href="https://wa.me/5521991685938" class="btn-agendar rounded-5" target="_blank">Agendar Consulta</a>
             </nav>
             
             <button class="menu-toggle" id="menuToggle">☰</button>
@@ -49,286 +50,339 @@
         <div class="menu-overlay" id="menuOverlay"></div>
     </header>
 
-    <!-- Seção 1 - Hero/Banner Principal com Layout de Duas Colunas -->
-    <section class="s-1">
-        <div class="container">
+    <!-- Seção 1 - Hero/Banner Principal -->
+    <section class="s-1 hero-section">
+        <div class="hero-bg-slider">
+             <div class="slide active" style="background-image: url('img/IMG_4024.jpg');"></div>
+             <div class="slide" style="background-image: url('img/IMG_4035.jpg');"></div>
+             <div class="slide" style="background-image: url('img/IMG_4160.jpg');"></div>
+             <div class="slider-overlay"></div>
+        </div>
+        
+        <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-text" data-aos="fade-right">
-                    <h1>Saúde Ocupacional e Bem-Estar em um só lugar</h1>
-                    <p>Cuidamos da saúde da sua empresa e dos seus colaboradores com excelência e humanização.</p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">+500</span>
-                            <span class="stat-label">Empresas Atendidas</span>
-                        </div>
-
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Especialidades</span>
-                        </div>
-                    </div>
+                    <h1>Saúde, bem-estar e prevenção<br>em um só lugar</h1>
+                    <p class="hero-subtitle">Cuidamos da saúde da sua família e da sua empresa com excelência e humanização.</p>
                     
                     <div class="hero-buttons">
-                        <a href="https://wa.me/5521991685938" class="btn btn-primary" target="_blank"><i class="fas fa-calendar-check"></i> Agendar Consulta</a>
-                        <a href="#sobre" class="btn btn-secondary"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+                        <a href="https://wa.me/5521991685938" class="btn btn-secondary rounded-5" target="_blank">Quero economizar</a>
                     </div>
                 </div>
                 
-                <div class="hero-image" data-aos="fade-left">
-	                    <div class="image-slider">
-	                        <div class="slide active" style="background-image: url('img/IMG_4024.jpg');"></div>
-	                        <div class="slide" style="background-image: url('img/IMG_4035.jpg');"></div>
-	                        <div class="slide" style="background-image: url('img/IMG_4068.jpg');"></div>
-	                        <div class="slide" style="background-image: url('img/IMG_4081.jpg');"></div>
-	                        <div class="slide" style="background-image: url('img/IMG_4106.jpg');"></div>
-	                        <div class="slide" style="background-image: url('img/IMG_4160.jpg');"></div>
-	                    </div>
+                <div class="hero-price-cards" data-aos="fade-left">
+                    <div class="card-price bg-primary-dark text-center">
+                        <p class="text-small text-white fw-bold m-0 px-1">CONVÊNIOS</p>
+                        <p class="text-small text-white m-0">A partir de</p>
+                        <div class="price-display">
+                            <span class="currency">R$</span><span class="value">43</span><span class="cents">,00</span>
+                        </div>
+                        <p class="text-small text-white fw-bold m-0">POR MÊS</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 2 - Sobre a Clínica -->
+    <!-- Barra de Serviços Flutuante -->
+    <div class="container services-bar-container">
+        <div class="services-bar shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <a href="especialidades.html" class="service-card">
+                <div class="icon"><i class="fas fa-stethoscope"></i></div>
+                <div class="service-info">
+                    <p class="fw-bold m-0">Consultas</p>
+                    <span class="text-small text-light-gray">Presencial e Telemedicina</span>
+                </div>
+            </a>
+            <a href="exames.html" class="service-card">
+                <div class="icon"><i class="fas fa-microscope"></i></div>
+                <div class="service-info">
+                    <p class="fw-bold m-0">Exames</p>
+                    <span class="text-small text-light-gray">Até 70% de Desconto</span>
+                </div>
+            </a>
+            <a href="medicina-ocupacional.html" class="service-card">
+                <div class="icon"><i class="fas fa-hard-hat"></i></div>
+                <div class="service-info">
+                    <p class="fw-bold m-0">Ocupacional</p>
+                    <span class="text-small text-light-gray">Saúde da sua Empresa</span>
+                </div>
+            </a>
+            <a href="convenios.html" class="service-card">
+                <div class="icon"><i class="fas fa-hand-holding-medical"></i></div>
+                <div class="service-info">
+                    <p class="fw-bold m-0">Convênios</p>
+                    <span class="text-small text-light-gray">Planos Acessíveis</span>
+                </div>
+            </a>
+            <a href="clinicas-conveniadas.html" class="service-card">
+                <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
+                <div class="service-info">
+                    <p class="fw-bold m-0">Clínicas</p>
+                    <span class="text-small text-light-gray">Nossas Unidades</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Seção 2 - Sobre a Clínica (Estilo Cartões Interativos) -->
     <section class="s-2" id="sobre">
         <div class="container">
-            <div class="about-content" data-aos="fade-up">
-                <h2>Bem-vindo à Clínica Fenix</h2>
-                <p>Somos uma clínica completa que oferece atendimento médico de qualidade, com foco em saúde preventiva, medicina ocupacional e bem-estar. Nossa missão é proporcionar cuidado humanizado com tecnologia de ponta.</p>
-            </div>
-            
-            <div class="about-cards">
-                <div class="about-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="fas fa-hospital"></i></div>
-                    <h3>Estrutura Completa</h3>
-                    <p>Instalações modernas e equipamentos de última geração para seu atendimento.</p>
+            <div class="row align-items-center mb-5">
+                <div class="col-2" data-aos="fade-right">
+                    <h2 class="section-title text-primary fw-bold">O maior parceiro da sua saúde!</h2>
+                    <h3 class="section-subtitle text-gray-500 fw-bold mb-4">Com a Clínica Fenix você tem acesso a estrutura completa, equipe especializada e atendimento humanizado.</h3>
                 </div>
-                
-                <div class="about-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon"><i class="fas fa-user-md"></i></div>
-                    <h3>Equipe Especializada</h3>
-                    <p>Profissionais qualificados e experientes em diversas áreas da medicina.</p>
-                </div>
-                
-                <div class="about-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Atendimento Humanizado</h3>
-                    <p>Cuidado personalizado e acolhedor para cada paciente e empresa.</p>
+                <div class="col-2" data-aos="fade-left">
+                    <div class="about-cards-compact">
+                        <div class="about-card-small">
+                            <div class="icon-3d"><img src="img/icon_hospital_1779747723056.png" alt="Estrutura Completa"></div>
+                            <div class="card-text">
+                                <h4 class="text-primary fw-bold">Estrutura Completa</h4>
+                                <p>Instalações modernas e equipamentos de ponta.</p>
+                            </div>
+                        </div>
+                        <div class="about-card-small">
+                            <div class="icon-3d"><img src="img/icon_doctor_1779747736431.png" alt="Equipe Especializada"></div>
+                            <div class="card-text">
+                                <h4 class="text-primary fw-bold">Equipe Especializada</h4>
+                                <p>Profissionais qualificados em diversas áreas.</p>
+                            </div>
+                        </div>
+                        <div class="about-card-small">
+                            <div class="icon-3d"><img src="img/icon_heart_1779747750387.png" alt="Atendimento Humanizado"></div>
+                            <div class="card-text">
+                                <h4 class="text-primary fw-bold">Atendimento Humanizado</h4>
+                                <p>Cuidado acolhedor para cada paciente.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3 - História, Missão, Visão e Valores -->
-    <section class="s-3">
+    <!-- Seção 3 - Medicina e Segurança do Trabalho (B2B) -->
+    <section class="s-3-ocupacional bg-white">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Nossa Essência</h2>
-            </div>
-            
-            <div class="mvv-grid">
-                <div class="mvv-item" data-aos="fade-up" data-aos-delay="100">
-                    <h3><i class="fas fa-book-open"></i> Nossa História</h3>
-                    <p>A Clínica Fenix nasceu com o propósito de oferecer atendimento médico de excelência, combinando tradição e inovação. Ao longo dos anos, consolidamos nossa presença como referência em saúde e medicina ocupacional, sempre priorizando o bem-estar de nossos pacientes e parceiros.</p>
+            <div class="ocupacional-split">
+                <!-- Imagem -->
+                <div class="ocupacional-image" data-aos="fade-right">
+                    <div class="image-wrapper shadow-lg rounded-5 overflow-hidden">
+                        <img src="img/medicina_ocupacional_home.png" alt="Segurança e Medicina do Trabalho na Clínica Fenix">
+                    </div>
                 </div>
                 
-                <div class="mvv-item" data-aos="fade-up" data-aos-delay="200">
-                    <h3><i class="fas fa-bullseye"></i> Missão</h3>
-                    <p>Promover saúde e qualidade de vida através de atendimento médico humanizado, preventivo e de excelência, utilizando tecnologia moderna e equipe qualificada para servir pessoas e empresas com compromisso e ética.</p>
-                </div>
-                
-                <div class="mvv-item" data-aos="fade-up" data-aos-delay="300">
-                    <h3><i class="fas fa-eye"></i> Visão</h3>
-                    <p>Ser reconhecida como a clínica de referência em saúde integral e medicina ocupacional, expandindo nossa atuação e mantendo os mais altos padrões de qualidade e inovação no cuidado com a saúde.</p>
-                </div>
-                            <div class="mvv-item" data-aos="fade-up" data-aos-delay="400">
-                    <h3><i class="fas fa-balance-scale"></i> Ética</h3>
-                    <p>Atuamos com transparência, responsabilidade e respeito em todas as nossas relações.</p>
-                </div>
-                
-                <div class="mvv-item" data-aos="fade-up" data-aos-delay="500">
-                    <h3><i class="fas fa-lightbulb"></i> Inovação</h3>
-                    <p>Buscamos constantemente novas tecnologias e métodos para melhorar nossos serviços.</p>
-                </div>
-                
-                <div class="mvv-item" data-aos="fade-up" data-aos-delay="600">
-                    <h3><i class="fas fa-hand-holding-heart"></i> Confiança</h3>
-                    <p>Construímos relacionamentos duradouros baseados em credibilidade e comprometimento.</p>
+                <!-- Conteúdo -->
+                <div class="ocupacional-content" data-aos="fade-left">
+                    <span class="badge-tag mb-3 d-inline-block">Para Empresas</span>
+                    <h2 class="section-title text-primary fw-bold mb-4">Medicina e Segurança<br>do Trabalho</h2>
+                    <p class="text-gray-500 mb-4" style="font-size: 1.1rem; line-height: 1.6;">
+                        Garantimos a saúde dos seus colaboradores e o cumprimento rigoroso das normas regulamentadoras (NRs), protegendo a sua empresa de passivos trabalhistas.
+                    </p>
+                    
+                    <ul class="features-list-modern mb-5">
+                        <li><i class="fas fa-check-circle text-secondary"></i> Exames Admissionais e Demissionais (ASO)</li>
+                        <li><i class="fas fa-check-circle text-secondary"></i> Programas de Saúde Ocupacional (PCMSO)</li>
+                        <li><i class="fas fa-check-circle text-secondary"></i> Gerenciamento de Riscos (PGR / LTCAT)</li>
+                    </ul>
+                    
+                    <a href="medicina-ocupacional.html" class="btn btn-primary rounded-5 px-5 py-3 shadow-sm">
+                        Conhecer Nossos Planos Corporativos
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4 - Especialidades em Destaque -->
-    <section class="s-4">
-        <div class="container">
-            <h2 data-aos="fade-up">Especialidades Médicas</h2>
-            <p class="subtitle" data-aos="fade-up">Atendimento com profissionais qualificados em diversas áreas da medicina</p>
+    <section class="s-4 bg-light">
+        <div class="container text-center">
+            <h2 class="section-title text-primary fw-bold" data-aos="fade-up">Especialidades Médicas</h2>
+            <p class="subtitle mb-5" data-aos="fade-up">Atendimento com profissionais qualificados em diversas áreas da medicina</p>
             
-            <div class="especialidades-grid">
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon"><i class="fas fa-stethoscope"></i></div>
-                    <h4>Clínico Geral</h4>
+            <div class="especialidades-grid-modern">
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Cuidado Integral</span>
+                        <img src="img/clinico_geral_1779746457632.png" alt="Clínico Geral">
+                    </div>
+                    <div class="card-body">
+                        <h4>Clínico Geral</h4>
+                    </div>
                 </div>
-                
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="150">
-                    <div class="icon"><i class="fas fa-heart"></i></div>
-                    <h4>Cardiologia</h4>
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Consulta Especializada</span>
+                        <img src="img/cardiologia_1779746471564.png" alt="Cardiologia">
+                    </div>
+                    <div class="card-body">
+                        <h4>Cardiologia</h4>
+                    </div>
                 </div>
-                
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon"><i class="fas fa-child"></i></div>
-                    <h4>Pediatria</h4>
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Atendimento Infantil</span>
+                        <img src="img/pediatria_1779746485424.png" alt="Pediatria">
+                    </div>
+                    <div class="card-body">
+                        <h4>Pediatria</h4>
+                    </div>
                 </div>
-                
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="250">
-                    <div class="icon"><i class="fas fa-bone"></i></div>
-                    <h4>Ortopedia</h4>
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Saúde Óssea e Articular</span>
+                        <img src="img/ortopedia_1779746498346.png" alt="Ortopedia">
+                    </div>
+                    <div class="card-body">
+                        <h4>Ortopedia</h4>
+                    </div>
                 </div>
-                
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon"><i class="fas fa-female"></i></div>
-                    <h4>Ginecologia</h4>
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Bem-estar Feminino</span>
+                        <img src="img/ginecologia_1779746511043.png" alt="Ginecologia">
+                    </div>
+                    <div class="card-body">
+                        <h4>Ginecologia</h4>
+                    </div>
                 </div>
-                
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="350">
-                    <div class="icon"><i class="fas fa-brain"></i></div>
-                    <h4>Neurologia</h4>
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Saúde Cerebral</span>
+                        <img src="img/neurologia_1779746523759.png" alt="Neurologia">
+                    </div>
+                    <div class="card-body">
+                        <h4>Neurologia</h4>
+                    </div>
                 </div>
-                
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="icon"><i class="fa-person-dress"></i></div>
-                    <h4>Otorrino</h4>
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Cuidado Sensorial</span>
+                        <img src="img/otorrino_1779746537155.png" alt="Otorrino">
+                    </div>
+                    <div class="card-body">
+                        <h4>Otorrino</h4>
+                    </div>
                 </div>
-                
-                <div class="especialidade-card" data-aos="zoom-in" data-aos-delay="450">
-                    <div class="icon"><i class="fas fa-syringe"></i></div>
-                    <h4>Endocrinologia</h4>
+                <div class="especialidade-card-modern" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="card-image-wrapper">
+                        <span class="badge-tag">Equilíbrio Metabólico</span>
+                        <img src="img/endocrinologia_1779746551382.png" alt="Endocrinologia">
+                    </div>
+                    <div class="card-body">
+                        <h4>Endocrinologia</h4>
+                    </div>
                 </div>
             </div>
             
             <div class="text-center mt-5" data-aos="fade-up">
-                <a href="especialidades.html" class="btn btn-primary">Ver Todas as Especialidades</a>
+                <a href="especialidades.html" class="btn btn-primary rounded-5 px-5 py-3 shadow-sm">Ver Todas as Especialidades</a>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5 - Medicina Ocupacional -->
-    <section class="s-5">
-        <div class="container">
-            <div class="ocupacional-content">
-                <div class="ocupacional-text" data-aos="fade-right">
-                    <h2>Medicina Ocupacional e Segurança do Trabalho</h2>
-                    <p>Soluções completas para empresas que buscam conformidade legal e cuidado com a saúde de seus colaboradores. Oferecemos programas, laudos, treinamentos e exames ocupacionais.</p>
-                    <a href="medicina-ocupacional.html" class="btn">Conheça Nossos Serviços</a>
-                </div>
-                
-                <div class="ocupacional-services" data-aos="fade-left">
-                    <div class="service-list">
-                        <div class="service-item">PGR - Programa de Gerenciamento de Risco</div>
-                        <div class="service-item">PCMSO - Controle Médico de Saúde</div>
-                        <div class="service-item">ASO - Atestado de Saúde Ocupacional</div>
-                        <div class="service-item">Laudos de Insalubridade e Periculosidade</div>
-                        <div class="service-item">Treinamentos e Capacitações</div>
-                        <div class="service-item">CIPA - Comissão de Prevenção</div>
-                        <div class="service-item">Exames Admissionais e Demissionais</div>
-                        <div class="service-item">PPP e LTCAT</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 6 - Convênios -->
+    <!-- Seção 6 - Convênios (Destaque Premium) -->
     <section class="s-6">
         <div class="container">
-            <h2 data-aos="fade-up">Nossos Convênios</h2>
-            <p class="subtitle" data-aos="fade-up">O Cartão de Toda Família - Convênios acessíveis com diversos benefícios</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title text-primary fw-bold" data-aos="fade-up">Nossos Convênios</h2>
+                <p class="subtitle" data-aos="fade-up">O Cartão de Toda Família - Convênios acessíveis com diversos benefícios</p>
+            </div>
             
-            <div class="planos-info" data-aos="fade-up">
-                <h3 class="text-center">Escolha o Plano Ideal para Você</h3>
-                
-                <div class="planos-grid">
-                    <div class="plano-card" data-aos="flip-left" data-aos-delay="100">
-                        <h3>Convênio Flex</h3>
-                        <div class="price">R$ 43,00</div>
-                        <ul class="features-list">
-                            <li><i class="fa-solid fa-check"></i> Condições especiais em Consultas</li>
-                            <li><i class="fa-solid fa-check"></i> Condições especiais em Exames</li>
-                            <li><i class="fa-solid fa-check"></i> Assistência Funeral Familiar</li>
-                            <li><i class="fa-solid fa-check"></i> Clube de Vantagens</li>
-                            <li><i class="fa-solid fa-check"></i> Desconto em Medicamentos</li>
-                        </ul>
-                        <a href="https://wa.me/5521991685938?text=Tenho+interesse+em+assinar+o+Convênio+Flex" class="btn" target="_blank">Contratar</a>
+            <div class="planos-grid-modern">
+                <div class="plano-card-modern" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plano-header">
+                        <h3>Flex</h3>
+                        <div class="price">
+                            <span class="currency">R$</span><span class="value">43</span><span class="period">,00 /mês</span>
+                        </div>
                     </div>
-                    
-                    <div class="plano-card" data-aos="flip-left" data-aos-delay="200">
-                        <h3>Convênio Light</h3>
-                        <div class="price">R$ 64,00</div>
+                    <div class="plano-body">
                         <ul class="features-list">
-                            <li><i class="fa-solid fa-check"></i> Consultas com Coparticipação</li>
-                            <li><i class="fa-solid fa-check"></i> 15 Exames Laboratoriais Gratuitos</li>
-                            <li><i class="fa-solid fa-check"></i> Assistência Funeral Familiar</li>
-                            <li><i class="fa-solid fa-check"></i> Aplicação de Injeção Gratuita</li>
-                            <li><i class="fa-solid fa-check"></i> Todos os benefícios do Flex</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Condições especiais em Consultas</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Condições especiais em Exames</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Assistência Funeral Familiar</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Clube de Vantagens</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Desconto em Medicamentos</li>
                         </ul>
-                        <a href="https://wa.me/5521991685938?text=Tenho+interesse+em+assinar+o+Convênio+Light" class="btn" target="_blank">Contratar</a>
-                    </div>
-                    
-                    <div class="plano-card" data-aos="flip-left" data-aos-delay="300">
-                        <h3>Convênio Premium</h3>
-                        <div class="price">R$ 118,00</div>
-                        <ul class="features-list">
-                            <li><i class="fa-solid fa-check"></i> Consultas Ilimitadas</li>
-                            <li><i class="fa-solid fa-check"></i> 33 Exames Laboratoriais Gratuitos</li>
-                            <li><i class="fa-solid fa-check"></i> Exames Complementares Gratuitos</li>
-                            <li><i class="fa-solid fa-check"></i> Obturação simples + Flúor</li>
-                            <li><i class="fa-solid fa-check"></i> Todos os benefícios do Light</li>
-                        </ul>
-                        <a href="https://wa.me/5521991685938?text=Tenho+interesse+em+assinar+o+Convênio+Premium" class="btn" target="_blank">Contratar</a>
+                        <a href="https://wa.me/5521991685938?text=Tenho+interesse+em+assinar+o+Convênio+Flex" class="btn btn-outline-primary rounded-5 w-100 mt-4" target="_blank">Contratar Flex</a>
                     </div>
                 </div>
                 
-                <div class="text-center mt-4">
-                    <a href="convenios.html" class="btn btn-secondary">Ver Todos os Benefícios</a>
+                <div class="plano-card-modern popular" data-aos="fade-up" data-aos-delay="200">
+                    <div class="popular-badge">Mais Popular</div>
+                    <div class="plano-header bg-primary text-white">
+                        <h3 class="text-white">Light</h3>
+                        <div class="price text-white">
+                            <span class="currency">R$</span><span class="value">64</span><span class="period text-white">,00 /mês</span>
+                        </div>
+                    </div>
+                    <div class="plano-body">
+                        <ul class="features-list">
+                            <li><i class="fa-solid fa-check text-success"></i> Consultas com Coparticipação</li>
+                            <li><i class="fa-solid fa-check text-success"></i> 15 Exames Laboratoriais Gratuitos</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Assistência Funeral Familiar</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Aplicação de Injeção Gratuita</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Todos os benefícios do Flex</li>
+                        </ul>
+                        <a href="https://wa.me/5521991685938?text=Tenho+interesse+em+assinar+o+Convênio+Light" class="btn btn-light-blue w-100 mt-4" target="_blank">Contratar Light</a>
+                    </div>
                 </div>
+                
+                <div class="plano-card-modern" data-aos="fade-up" data-aos-delay="300">
+                    <div class="plano-header">
+                        <h3>Premium</h3>
+                        <div class="price">
+                            <span class="currency">R$</span><span class="value">118</span><span class="period">,00 /mês</span>
+                        </div>
+                    </div>
+                    <div class="plano-body">
+                        <ul class="features-list">
+                            <li><i class="fa-solid fa-check text-success"></i> Consultas Ilimitadas</li>
+                            <li><i class="fa-solid fa-check text-success"></i> 33 Exames Laboratoriais Gratuitos</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Exames Complementares Gratuitos</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Obturação simples + Flúor</li>
+                            <li><i class="fa-solid fa-check text-success"></i> Todos os benefícios do Light</li>
+                        </ul>
+                        <a href="https://wa.me/5521991685938?text=Tenho+interesse+em+assinar+o+Convênio+Premium" class="btn btn-outline-primary rounded-5 w-100 mt-4" target="_blank">Contratar Premium</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="convenios.html" class="btn btn-link text-primary fw-bold">Ver Mais Detalhes dos Planos <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Seção 7 - Galeria de Fotos -->
-    <section class="s-7 galeria-section">
+    <section class="s-7 galeria-section bg-light">
         <div class="container">
-            <h2 data-aos="fade-up">Conheça Nossa Estrutura</h2>
-            <p class="subtitle" data-aos="fade-up">Instalações modernas e equipamentos de última geração para seu conforto e segurança</p>
+            <h2 class="section-title text-center text-primary fw-bold" data-aos="fade-up">Conheça Nossa Estrutura</h2>
+            <p class="subtitle text-center mb-5" data-aos="fade-up">Instalações modernas e equipamentos de última geração para seu conforto e segurança</p>
             
             <div class="galeria-grid">
-                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="100">
+                <div class="galeria-item rounded-4" data-aos="zoom-in" data-aos-delay="100">
                     <img src="img/IMG_4179.jpg" alt="Fachada da Clínica Fenix" loading="lazy">
                     <div class="caption">Fachada da Clínica</div>
                 </div>
-                
-                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="150">
+                <div class="galeria-item rounded-4" data-aos="zoom-in" data-aos-delay="150">
                     <img src="img/IMG_4035.jpg" alt="Recepção da Clínica Fenix" loading="lazy">
                     <div class="caption">Recepção</div>
                 </div>
-                
-                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="200">
+                <div class="galeria-item rounded-4" data-aos="zoom-in" data-aos-delay="200">
                     <img src="img/IMG_4068.jpg" alt="Consultório da Clínica Fenix" loading="lazy">
                     <div class="caption">Consultório</div>
                 </div>
-                
-                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="250">
+                <div class="galeria-item rounded-4" data-aos="zoom-in" data-aos-delay="250">
                     <img src="img/IMG_4081.jpg" alt="Sala de Exames da Clínica Fenix" loading="lazy">
                     <div class="caption">Sala de Exames</div>
                 </div>
-                
-                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="300">
+                <div class="galeria-item rounded-4" data-aos="zoom-in" data-aos-delay="300">
                     <img src="img/IMG_4106.jpg" alt="Equipamentos da Clínica Fenix" loading="lazy">
                     <div class="caption">Equipamentos Modernos</div>
                 </div>
-                
-                <div class="galeria-item" data-aos="zoom-in" data-aos-delay="350">
+                <div class="galeria-item rounded-4" data-aos="zoom-in" data-aos-delay="350">
                     <img src="img/IMG_4160.jpg" alt="Ambiente da Clínica Fenix" loading="lazy">
                     <div class="caption">Ambiente Acolhedor</div>
                 </div>
@@ -336,34 +390,89 @@
         </div>
     </section>
 
-    <!-- Seção 8 - Depoimentos -->
-    <section class="s-8">
+    <!-- Seção de Depoimentos / Avaliações Google -->
+    <section class="s-testimonials bg-light py-5">
         <div class="container">
-            <h2 data-aos="fade-up">O Que Dizem Nossos Pacientes</h2>
-            
-            <div class="depoimentos-grid">
-                <div class="depoimento-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Excelente atendimento! A equipe é muito atenciosa e os médicos são extremamente competentes. Recomendo a todos!"</p>
-                    <span class="author">MR</span>
-                    <span class="author-name">Maria Rosa</span>
-                    <span class="author-role">Paciente</span>
+            <div class="testimonials-header" data-aos="fade-up">
+                <div class="testimonials-info">
+                    <h2 class="section-title text-start mb-2" style="font-size: 2.2rem; color: #0f172a; text-transform: uppercase;">O QUE NOSSOS CLIENTES DIZEM</h2>
+                    <div class="google-rating">
+                        <span class="rating-number">4,7</span>
+                        <div class="stars">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <div class="google-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+                        </div>
+                        <div class="rating-text">
+                            <strong>Google Meu Negócio</strong>
+                            <span>Avaliação Excelente</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="depoimento-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"A clínica tem uma estrutura moderna e o atendimento é rápido. Muito satisfeito com os serviços de medicina ocupacional."</p>
-                    <span class="author">JS</span>
-                    <span class="author-name">João Silva</span>
-                    <span class="author-role">Empresa Parceira</span>
+                <a href="https://share.google/OprlyjuiidI10YdP7" class="btn btn-outline-dark rounded-5 btn-google" target="_blank">VER AVALIAÇÕES NO GOOGLE</a>
+            </div>
+
+            <div class="testimonials-grid mt-5">
+                <!-- Card 1 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">
+                        <div class="avatar bg-pink">B</div>
+                        <div class="user-info">
+                            <h4>Bianca Pereira</h4>
+                            <span>8 meses atrás</span>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="review-text">"Atendimento muito bom, atendentes simpáticas e médicos atenciosos"</p>
                 </div>
-                
-                <div class="depoimento-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Profissionais qualificados e ambiente acolhedor. Me senti muito bem cuidada durante todo o atendimento."</p>
-                    <span class="author">AP</span>
-                    <span class="author-name">Ana Paula</span>
-                    <span class="author-role">Paciente</span>
+
+                <!-- Card 2 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <div class="avatar bg-slate">F</div>
+                        <div class="user-info">
+                            <h4>Fernanda Campos</h4>
+                            <span>3 meses atrás</span>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="review-text">"Ótimo atendimento, clinica organização. Amei minha experiência!"</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-header">
+                        <div class="avatar bg-orange">N</div>
+                        <div class="user-info">
+                            <h4>Natalia Soledade</h4>
+                            <span>8 meses atrás</span>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="review-text">"Um ótima experiência, um atendimento excelente, humanizado. Bem organizado! Fui muito bem atendida. E recomendo muito a clínica Fenix."</p>
                 </div>
             </div>
         </div>
@@ -372,12 +481,11 @@
     <!-- Seção 9 - CTA Final -->
     <section class="s-9">
         <div class="container">
-            <div data-aos="zoom-in">
-                <h2>Pronto para Cuidar da Sua Saúde?</h2>
-                <p>Agende sua consulta ou exame agora mesmo e conte com a excelência da Clínica Fenix</p>
+            <div data-aos="zoom-in" class="cta-banner rounded-5 shadow-lg">
+                <h2 class="fw-bold mb-3">Pronto para Cuidar da Sua Saúde?</h2>
+                <p class="mb-4">Agende sua consulta ou exame agora mesmo e conte com a excelência da Clínica Fenix</p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/5521991685938" class="btn btn-white" target="_blank">Agendar Agora</a>
-                    <a href="https://wa.me/5521991685938" class="btn btn-outline-white" target="_blank">Falar no WhatsApp</a>
+                    <a href="https://wa.me/5521991685938" class="btn btn-white rounded-5 px-5 py-3 fw-bold text-primary" target="_blank">Agendar Agora</a>
                 </div>
             </div>
         </div>
@@ -422,10 +530,10 @@
                     <h3>Contato</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Rua João Fernandes Neto - Centro, Belford Roxo, 984</p>
                     <p><i class="fas fa-phone"></i> Telefone Fixo: (21) 3582-2115</p>
-                            <p><i class="fab fa-whatsapp"></i> Atendimento PF: (21) 96950-1839</p>
-                            <p><i class="fab fa-whatsapp"></i> Atendimento PJ: (21) 96826-8160</p>
-                            <p><i class="fab fa-whatsapp"></i> Segurança do Trabalho: (21) 97359-5484</p>
-                            <p><i class="fab fa-whatsapp"></i> Comercial PJ: (21) 99168-5938</p>
+                    <p><i class="fab fa-whatsapp"></i> Atendimento PF: (21) 96950-1839</p>
+                    <p><i class="fab fa-whatsapp"></i> Atendimento PJ: (21) 96826-8160</p>
+                    <p><i class="fab fa-whatsapp"></i> Segurança do Trabalho: (21) 97359-5484</p>
+                    <p><i class="fab fa-whatsapp"></i> Comercial PJ: (21) 99168-5938</p>
                     <p><i class="fas fa-envelope"></i> contato@clinicafenix.com.br</p>
                     <p>🕒 Seg - Sex: 7:30h às 18h<br>Sáb: 7:30h às 18h</p>
                 </div>
@@ -450,5 +558,48 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // Hero Slider Simple JS
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-bg-slider .slide');
+            let currentSlide = 0;
+            
+            if(slides.length > 0) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 5000);
+            }
+
+            // Auto-scroll da barra de serviços no mobile
+            const servicesBar = document.querySelector('.services-bar');
+            if(servicesBar) {
+                let isHovered = false;
+                servicesBar.addEventListener('mouseenter', () => isHovered = true);
+                servicesBar.addEventListener('mouseleave', () => isHovered = false);
+                servicesBar.addEventListener('touchstart', () => isHovered = true, {passive: true});
+                servicesBar.addEventListener('touchend', () => {
+                    setTimeout(() => isHovered = false, 2000); // aguarda um pouco após toque
+                });
+
+                setInterval(() => {
+                    // Ativa principalmente quando a barra possui scroll (ex: mobile)
+                    if(!isHovered) {
+                        const maxScroll = servicesBar.scrollWidth - servicesBar.clientWidth;
+                        if (maxScroll > 0) {
+                            if (servicesBar.scrollLeft >= maxScroll - 5) {
+                                // Voltar ao início suavemente se chegou no final
+                                servicesBar.scrollTo({ left: 0, behavior: 'smooth' });
+                            } else {
+                                // Rolar aproximadamente um card para a direita
+                                servicesBar.scrollBy({ left: 160, behavior: 'smooth' });
+                            }
+                        }
+                    }
+                }, 3000); // Passa a cada 3 segundos
+            }
+        });
+    </script>
 </body>
 </html>
