@@ -301,7 +301,7 @@ if (contactForm) {
             
             // Opcional: Redirecionar para WhatsApp
             const whatsappMessage = `Olá! Meu nome é ${nome}. ${mensagem}`;
-            const whatsappUrl = `https://wa.me/5521991685938?text=${encodeURIComponent(whatsappMessage)}`;
+            const whatsappUrl = `https://wa.me/5521969501839?text=${encodeURIComponent(whatsappMessage)}`;
             
             setTimeout(() => {
                 if (confirm('Deseja continuar a conversa pelo WhatsApp?')) {
