@@ -156,7 +156,7 @@ O site está pronto para deploy em qualquer servidor web. Basta fazer upload dos
 - 📍 Belford Roxo - RJ
 - 📞 (21) 99999-9999
 - ✉️ contato@clinicafenix.com.br
-- 🕒 Seg - Sex: 8h às 18h | Sáb: 8h às 12h
+- 🕒 Seg - Sex: 8h às 17h | Sáb: 8h às 12h
 
 ---
 
