@@ -1,0 +1,318 @@
+// ========================================
+// SEÇÃO E PÁGINA DE SINDICALIZADOS (SINDILOTO)
+// ========================================
+
+// Botão Primário de Adesão (Reutilizável)
+.btn-adesao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #00c9b1 0%, #00e5c0 100%);
+  color: #00222d !important;
+  font-family: $font-secondary;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 16px 40px;
+  border-radius: $radius-full;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 8px 25px rgba(0, 201, 177, 0.45);
+  transition: all $transition-base;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+
+  i {
+    font-size: 1.2rem;
+    color: #00222d !important;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, #00e5c0 0%, #34f5d5 100%);
+    color: #001a22 !important;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 229, 192, 0.6);
+
+    i {
+      color: #001a22 !important;
+    }
+  }
+}
+
+// Botão Secundário para Cards
+.btn-card-form {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #008196 0%, #005a6a 100%);
+  color: #ffffff !important;
+  font-family: $font-secondary;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 16px 36px;
+  border-radius: $radius-full;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(0, 129, 150, 0.35);
+  transition: all $transition-base;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+
+  i {
+    font-size: 1.1rem;
+    color: #ffffff !important;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, #009cb7 0%, #007084 100%);
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 129, 150, 0.5);
+
+    i {
+      color: #ffffff !important;
+    }
+  }
+}
+
+// 1. Seção de Sindicalizados (Home Page & Página Sindiloto)
+.s-sindicalizados {
+  padding: 4.5rem 0 5.5rem 0;
+  background: linear-gradient(135deg, #003644 0%, #00687a 50%, #00222d 100%);
+  color: $text-white;
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 196, 180, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .sindicalizados-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .sindicalizados-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+      text-align: center;
+    }
+  }
+
+  .sindicalizados-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+
+    @media (max-width: $breakpoint-lg) {
+      align-items: center;
+      text-align: center;
+    }
+
+    .badge-sindicalizado {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 201, 177, 0.15);
+      border: 1px solid rgba(0, 201, 177, 0.4);
+      color: #00e5c0;
+      padding: 8px 22px;
+      border-radius: $radius-full;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-lg;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-family: $font-secondary;
+      font-size: 2.5rem;
+      font-weight: $font-weight-bold;
+      line-height: 1.25;
+      color: $text-white;
+      margin-bottom: $spacing-md;
+      text-align: left;
+
+      @media (max-width: $breakpoint-lg) {
+        text-align: center;
+      }
+
+      span {
+        color: #00e5c0;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 2rem;
+      }
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0 0 $spacing-2xl 0;
+      line-height: 1.7;
+      max-width: 600px;
+      text-align: left;
+
+      @media (max-width: $breakpoint-lg) {
+        text-align: center;
+        margin: 0 auto $spacing-2xl auto;
+      }
+    }
+
+    .sindicalizados-buttons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      @media (max-width: $breakpoint-lg) {
+        justify-content: center;
+      }
+    }
+  }
+
+  .sindicalizados-image-side {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+
+    @media (max-width: $breakpoint-lg) {
+      margin-top: $spacing-md;
+    }
+
+    .image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      max-height: 380px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      border: 3px solid rgba(0, 201, 177, 0.3);
+      background: rgba(0, 0, 0, 0.2);
+
+      img {
+        width: 100%;
+        height: 380px;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.03);
+      }
+    }
+
+    .badge-float {
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 39, 51, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 201, 177, 0.5);
+      padding: 10px 24px;
+      border-radius: $radius-full;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $text-white;
+      font-size: 0.9rem;
+      font-weight: $font-weight-semibold;
+      z-index: 5;
+
+      i {
+        color: #00e5c0;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// 2. Página Completa de Sindicalizados (sindicalizados.html)
+.sindicalizados-page {
+  padding-bottom: $spacing-3xl;
+
+  .page-header-sindicalizados {
+    background: linear-gradient(135deg, #003644 0%, #00687a 50%, #00222d 100%);
+    color: $text-white;
+    padding: $spacing-3xl $spacing-xl;
+    border-radius: 0 0 $radius-xl $radius-xl;
+    margin-bottom: $spacing-3xl;
+    position: relative;
+    box-shadow: $shadow-lg;
+  }
+
+  // Card Sindiloto Centralizado
+  .sindiloto-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 40px rgba(0, 48, 60, 0.08);
+    border: 1px solid rgba(0, 129, 150, 0.15);
+    max-width: 680px;
+    margin: $spacing-2xl auto $spacing-3xl auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card-icon-box {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(0, 129, 150, 0.1);
+      color: #008196;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    h2 {
+      font-family: $font-secondary;
+      font-size: 1.85rem;
+      font-weight: $font-weight-bold;
+      color: #002733;
+      margin-bottom: $spacing-sm;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #556970;
+      line-height: 1.7;
+      margin: 0 auto $spacing-xl auto;
+      max-width: 540px;
+      text-align: center;
+    }
+  }
+}
