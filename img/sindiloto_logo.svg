@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" width="240" height="180">
+  <defs>
+    <linearGradient id="sindiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#183b8a"/>
+      <stop offset="100%" stop-color="#0f2557"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- 3 Stars -->
+  <g fill="#1d4ed8" filter="url(#shadow)">
+    <!-- Left Star -->
+    <polygon points="90,14 93,22 101,22 95,27 97,35 90,30 83,35 85,27 79,22 87,22" />
+    <!-- Center Star (slightly larger) -->
+    <polygon points="120,8 123.5,18 133,18 125.5,24 128,34 120,28 112,34 114.5,24 107,18 116.5,18" />
+    <!-- Right Star -->
+    <polygon points="150,14 153,22 161,22 155,27 157,35 150,30 143,35 145,27 139,22 147,22" />
+  </g>
+
+  <!-- Circular Crest / Shield -->
+  <g transform="translate(120, 84)" filter="url(#shadow)">
+    <!-- Outer Rounded Square / Shield -->
+    <rect x="-42" y="-42" width="84" height="84" rx="20" fill="url(#sindiGrad)" stroke="#3b82f6" stroke-width="2.5" />
+    
+    <!-- Inner Circle with Globe Lines -->
+    <circle cx="0" cy="0" r="32" fill="#0c1f47" stroke="#60a5fa" stroke-width="1.2" opacity="0.9" />
+    
+    <!-- Globe Meridians / Parallels -->
+    <ellipse cx="0" cy="0" rx="18" ry="32" fill="none" stroke="#60a5fa" stroke-width="0.9" stroke-dasharray="2 1" opacity="0.6"/>
+    <ellipse cx="0" cy="0" rx="32" ry="14" fill="none" stroke="#60a5fa" stroke-width="0.9" stroke-dasharray="2 1" opacity="0.6"/>
+    <line x1="-32" y1="0" x2="32" y2="0" stroke="#60a5fa" stroke-width="1" opacity="0.7"/>
+    <line x1="0" y1="-32" x2="0" y2="32" stroke="#60a5fa" stroke-width="1" opacity="0.7"/>
+
+    <!-- Omega / Horseshoe Icon (Symbol of Fortune & Union) -->
+    <path d="M -16,16 L -9,16 C -9,9 -6,4 0,4 C 6,4 9,9 9,16 L 16,16 C 16,3 9,-11 0,-11 C -9,-11 -16,3 -16,16 Z" 
+          fill="#ffffff" stroke="#93c5fd" stroke-width="1" />
+    <circle cx="0" cy="-2" r="5" fill="#38bdf8" />
+  </g>
+
+  <!-- Typography -->
+  <text x="120" y="150" font-family="'Poppins', 'Inter', sans-serif" font-size="19" font-weight="800" fill="#142c67" text-anchor="middle" letter-spacing="1.5">SINDILOTO-RJ</text>
+  <text x="120" y="167" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#475569" text-anchor="middle" letter-spacing="0.5">SINDICATO DOS LOTÉRICOS DO RJ</text>
+</svg>
