@@ -209,10 +209,14 @@
   pointer-events: none;
 }
 
+.sindicato-hero .container {
+  max-width: 1260px;
+}
+
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
+  grid-template-columns: 1.28fr 0.82fr;
+  gap: 32px;
   align-items: start;
   position: relative;
   z-index: 2;
@@ -345,16 +349,114 @@
   }
 }
 
+/* ============================================================
+   LINHA CENTRAL DO FLYER: MODELO AO LADO DO PREÇO E CONTATOS
+   ============================================================ */
+.flyer-mid-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.flyer-model-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flyer-offer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Card Visual da Imagem da Modelo do Flyer */
+.hero-model-showcase {
+  position: relative;
+  border-radius: var(--lp-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--lp-shadow-lg);
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  height: 100%;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-model-showcase img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero-model-showcase:hover img {
+  transform: scale(1.02);
+}
+
+.model-badge-top-chip {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--lp-radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.4px;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.model-badge-top-chip i {
+  color: #38bdf8;
+  font-size: 0.85rem;
+}
+
+.model-badge-bottom-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.6) 60%, transparent 100%);
+  color: #ffffff;
+  padding: 26px 14px 14px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.35;
+  z-index: 2;
+}
+
+.model-badge-bottom-caption strong {
+  color: #38bdf8;
+  display: block;
+  font-size: 0.88rem;
+}
+
 /* Visual do Preço R$ 1,00 (Exato do Flyer) */
 .price-showcase-card {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
   background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
   border: 2px solid #38bdf8;
   border-radius: var(--lp-radius-lg);
-  padding: 18px 26px;
-  margin-bottom: 28px;
+  padding: 14px 16px;
+  margin-bottom: 0;
   box-shadow: var(--lp-shadow-md);
   position: relative;
   overflow: hidden;
@@ -373,139 +475,76 @@
 .price-main-block {
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 4px;
 }
 
 .price-currency {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: #1e1b4b;
 }
 
 .price-number {
   font-family: 'Poppins', sans-serif;
-  font-size: 4.8rem;
+  font-size: 3.6rem;
   font-weight: 900;
   line-height: 0.9;
   color: #1e1b4b;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
 }
 
 .price-labels {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 4px;
+  padding-left: 2px;
 }
 
 .price-apenas {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 900;
   color: #1e1b4b;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
 }
 
 .price-period {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #1e1b4b;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .price-divider {
   width: 2px;
-  height: 70px;
+  height: 54px;
   background: #cbd5e1;
 }
 
 .price-benefit-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
+  flex: 1;
 }
 
 .price-benefit-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.92rem;
+  gap: 6px;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #1e293b;
+  line-height: 1.25;
 }
 
 .price-benefit-item i {
   color: #00c9b1;
-  font-size: 0.95rem;
-}
-
-/* Card Visual da Imagem da Modelo do Flyer */
-.hero-model-showcase {
-  position: relative;
-  border-radius: var(--lp-radius-lg);
-  overflow: hidden;
-  box-shadow: var(--lp-shadow-lg);
-  margin-bottom: 24px;
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-}
-
-.hero-model-showcase img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.hero-model-showcase:hover img {
-  transform: scale(1.03);
-}
-
-.floating-model-badge {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
-  padding: 12px 18px;
-  border-radius: var(--lp-radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.floating-model-badge .model-badge-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.floating-model-badge .model-badge-text strong {
-  color: #38bdf8;
-  display: block;
-}
-
-.floating-model-badge .model-badge-icon {
-  background: #215df9;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   flex-shrink: 0;
 }
 
@@ -513,9 +552,13 @@
 .flyer-contacts-box {
   background: #ffffff;
   border-radius: var(--lp-radius-md);
-  padding: 20px;
+  padding: 18px 20px;
   border: 1px solid #e2e8f0;
   box-shadow: var(--lp-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .flyer-contacts-title {
@@ -1233,6 +1276,221 @@
 }
 
 /* ============================================================
+   SEÇÃO 4.5: CLÍNICAS CONVENIADAS (REDE CREDENCIADA)
+   ============================================================ */
+.sindicato-conveniadas {
+  padding: 1rem 0 5rem 0;
+  background: #f8fafc;
+}
+
+.conveniadas-card {
+  background: linear-gradient(135deg, #0b1a48 0%, #122c74 55%, #183e9d 100%);
+  border-radius: var(--lp-radius-lg);
+  padding: 50px 45px;
+  color: #ffffff;
+  box-shadow: 0 20px 45px rgba(11, 26, 72, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.conveniadas-card::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(33, 93, 249, 0.35) 0%, rgba(33, 93, 249, 0) 70%);
+  pointer-events: none;
+}
+
+.conveniadas-card::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(0, 210, 133, 0.25) 0%, rgba(0, 210, 133, 0) 70%);
+  pointer-events: none;
+}
+
+.conveniadas-header {
+  max-width: 820px;
+  margin: 0 auto 36px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.conveniadas-card .section-tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin-bottom: 14px;
+}
+
+.conveniadas-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.conveniadas-header h2 span {
+  color: #5bb3ff;
+}
+
+.conveniadas-header p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.conveniadas-regions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 38px;
+  position: relative;
+  z-index: 1;
+}
+
+.region-pill-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 18px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.region-pill-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.region-pill-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  background: rgba(33, 93, 249, 0.35);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #72b6ff;
+  font-size: 1rem;
+}
+
+.region-pill-card strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 4px;
+}
+
+.region-pill-card span {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.4;
+}
+
+.conveniadas-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-conveniadas-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  color: #0b1a48;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-conveniadas-action i {
+  color: #215df9;
+  font-size: 1.15rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-conveniadas-action:hover {
+  background: #00d285;
+  color: #0b1a48;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0, 210, 133, 0.4);
+}
+
+.btn-conveniadas-action:hover i {
+  color: #0b1a48;
+  transform: scale(1.15);
+}
+
+.conveniadas-cta-note {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.conveniadas-cta-note i {
+  color: #00d285;
+}
+
+@media (max-width: 991px) {
+  .conveniadas-regions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .conveniadas-header h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .conveniadas-card {
+    padding: 32px 20px;
+  }
+  .conveniadas-regions-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .conveniadas-header h2 {
+    font-size: 1.4rem;
+  }
+  .btn-conveniadas-action {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 22px;
+    font-size: 0.98rem;
+  }
+}
+
+/* ============================================================
    SEÇÃO 5: PERGUNTAS FREQUENTES (FAQ)
    ============================================================ */
 .sindicato-faq {
@@ -1386,6 +1644,22 @@
 
   .flyer-contacts-grid {
     grid-template-columns: 1fr;
+  }
+
+  .flyer-mid-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero-model-showcase {
+    min-height: 380px;
+    max-height: 460px;
+  }
+
+  .hero-model-showcase img {
+    min-height: 380px;
+    max-height: 460px;
+    object-position: center 15%;
   }
 
   .adesao-form-card {

@@ -12,7 +12,7 @@ window.handleAdesaoSubmit = function(e) {
   const nomeInput = document.getElementById('adesaoNome');
   const emailInput = document.getElementById('adesaoEmail');
   const whatsappInput = document.getElementById('adesaoWhatsapp');
-  const empresaInput = document.getElementById('adesaoEmpresa');
+  const cidadeInput = document.getElementById('adesaoCidade') || document.getElementById('adesaoEmpresa');
   const perfilSelect = document.getElementById('adesaoPerfil');
   const colaboradoresSelect = document.getElementById('adesaoColaboradores');
   const termosCheck = document.getElementById('adesaoTermos');
@@ -20,7 +20,7 @@ window.handleAdesaoSubmit = function(e) {
   const nome = nomeInput ? nomeInput.value.trim() : '';
   const email = emailInput ? emailInput.value.trim() : '';
   const whatsapp = whatsappInput ? whatsappInput.value.trim() : '';
-  const empresa = empresaInput && empresaInput.value.trim() ? empresaInput.value.trim() : 'Lotérica RJ';
+  const cidade = cidadeInput && cidadeInput.value.trim() ? cidadeInput.value.trim() : 'Não informada';
   const perfil = perfilSelect ? perfilSelect.value : 'Colaborador';
   const colaboradores = colaboradoresSelect ? colaboradoresSelect.value : '1 colaborador';
 
@@ -42,7 +42,7 @@ window.handleAdesaoSubmit = function(e) {
         nome,
         email,
         whatsapp,
-        empresa,
+        cidade,
         perfil,
         colaboradores,
         data: new Date().toISOString()
@@ -53,14 +53,14 @@ window.handleAdesaoSubmit = function(e) {
     console.warn('Aviso: Armazenamento local restrito neste ambiente:', err);
   }
 
-  // Gerar link formatado do WhatsApp Oficial (Clínica Fênix / Sindiloto)
-  const zapNumber = '5521969501839';
+  // Gerar link formatado do WhatsApp Oficial (Clínica Fênix / Sindiloto: 21 2761-8550)
+  const zapNumber = '552127618550';
   const mensagemTexto = encodeURIComponent(
     `👋 Olá, Clínica Fênix! Acabei de solicitar minha adesão pela Parceria SINDILOTO-RJ (R$ 1,00/dia).\n\n` +
     `👤 *Nome:* ${nome}\n` +
     `✉️ *E-mail:* ${email}\n` +
     `📱 *WhatsApp:* ${whatsapp}\n` +
-    `🏢 *Lotérica/Empresa:* ${empresa}\n` +
+    `📍 *Cidade:* ${cidade}\n` +
     `💼 *Perfil:* ${perfil}\n` +
     `👥 *Colaboradores:* ${colaboradores}\n\n` +
     `Gostaria de concluir a adesão e receber mais detalhes!`
