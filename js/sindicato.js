@@ -3,16 +3,28 @@
  * Clínica Fênix & Sindiloto-RJ Parceria Oficial
  */
 
+// URL DO GOOGLE APPS SCRIPT (PLANILHA GOOGLE SHEETS)
+// Basta colar a URL gerada no Google Apps Script entre as aspas abaixo:
+window.CLINICA_FENIX_GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyUhck_2y1B4qU2WXIJcg6_VyEZyO6zS5pASn62jXenCGqJfxz4PIZdTGMqiV1olKgC/exec';
+
+let isSubmittingAdesao = false;
+
 // Função Global de Submissão do Formulário
-window.handleAdesaoSubmit = function(e) {
-  if (e && e.preventDefault) {
-    e.preventDefault();
+window.handleAdesaoSubmit = function (e) {
+  if (e) {
+    if (e.preventDefault) e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+  }
+
+  // Prevenir qualquer execução duplicada ou duplo clique
+  if (isSubmittingAdesao) {
+    return false;
   }
 
   const nomeInput = document.getElementById('adesaoNome');
   const emailInput = document.getElementById('adesaoEmail');
   const whatsappInput = document.getElementById('adesaoWhatsapp');
-  const cidadeInput = document.getElementById('adesaoCidade') || document.getElementById('adesaoEmpresa');
+  const empresaInput = document.getElementById('adesaoEmpresa') || document.getElementById('adesaoCidade');
   const perfilSelect = document.getElementById('adesaoPerfil');
   const colaboradoresSelect = document.getElementById('adesaoColaboradores');
   const termosCheck = document.getElementById('adesaoTermos');
@@ -20,21 +32,36 @@ window.handleAdesaoSubmit = function(e) {
   const nome = nomeInput ? nomeInput.value.trim() : '';
   const email = emailInput ? emailInput.value.trim() : '';
   const whatsapp = whatsappInput ? whatsappInput.value.trim() : '';
-  const cidade = cidadeInput && cidadeInput.value.trim() ? cidadeInput.value.trim() : 'Não informada';
+  const empresaCidade = empresaInput && empresaInput.value.trim() ? empresaInput.value.trim() : 'Não informada';
   const perfil = perfilSelect ? perfilSelect.value : 'Colaborador';
   const colaboradores = colaboradoresSelect ? colaboradoresSelect.value : '1 colaborador';
 
+  // Validação silenciosa e segura (o HTML5 já possui atributos 'required')
   if (!nome || !email || !whatsapp) {
-    alert('Por favor, preencha todos os campos obrigatórios (Nome, E-mail e WhatsApp).');
+    if (nomeInput && !nome) nomeInput.focus();
+    else if (emailInput && !email) emailInput.focus();
+    else if (whatsappInput && !whatsapp) whatsappInput.focus();
     return false;
   }
 
   if (termosCheck && !termosCheck.checked) {
-    alert('Por favor, concorde com os termos para prosseguir com a adesão.');
+    termosCheck.focus();
     return false;
   }
 
-  // Backup dos dados (com proteção total contra erros de ambiente)
+  // Ativar trava de envio imediatamente
+  isSubmittingAdesao = true;
+
+  // Feedback visual no botão de envio
+  const form = document.getElementById('formAdesaoSindicato');
+  const btnSubmit = form ? form.querySelector('button[type="submit"]') : null;
+  const originalBtnHtml = btnSubmit ? btnSubmit.innerHTML : '';
+  if (btnSubmit) {
+    btnSubmit.disabled = true;
+    btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+  }
+
+  // Backup dos dados no navegador (localStorage)
   try {
     if (typeof window !== 'undefined' && 'localStorage' in window) {
       const existingLeads = JSON.parse(window.localStorage.getItem('fenix_sindicato_leads') || '[]');
@@ -42,7 +69,8 @@ window.handleAdesaoSubmit = function(e) {
         nome,
         email,
         whatsapp,
-        cidade,
+        empresa: empresaCidade,
+        cidade: empresaCidade,
         perfil,
         colaboradores,
         data: new Date().toISOString()
@@ -53,6 +81,36 @@ window.handleAdesaoSubmit = function(e) {
     console.warn('Aviso: Armazenamento local restrito neste ambiente:', err);
   }
 
+  // Envio Automático para a Planilha do Google Sheets da Clínica Fênix
+  let sheetsUrl = (window.CLINICA_FENIX_GOOGLE_SHEETS_URL || '').trim();
+  if (sheetsUrl) {
+    if (!sheetsUrl.startsWith('http')) {
+      sheetsUrl = `https://script.google.com/macros/s/${sheetsUrl}/exec`;
+    }
+    try {
+      fetch(sheetsUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify({
+          dataHora: new Date().toLocaleString('pt-BR'),
+          nome: nome,
+          email: email,
+          whatsapp: whatsapp,
+          empresaCidade: empresaCidade,
+          perfil: perfil,
+          colaboradores: colaboradores
+        })
+      }).catch(function (err) {
+        console.warn('Aviso ao sincronizar com Google Sheets:', err);
+      });
+    } catch (err) {
+      console.warn('Falha na requisição Google Sheets:', err);
+    }
+  }
+
   // Gerar link formatado do WhatsApp Oficial (Clínica Fênix / Sindiloto: 21 2761-8550)
   const zapNumber = '552127618550';
   const mensagemTexto = encodeURIComponent(
@@ -60,7 +118,7 @@ window.handleAdesaoSubmit = function(e) {
     `👤 *Nome:* ${nome}\n` +
     `✉️ *E-mail:* ${email}\n` +
     `📱 *WhatsApp:* ${whatsapp}\n` +
-    `📍 *Cidade:* ${cidade}\n` +
+    `🏢 *Lotérica/Cidade:* ${empresaCidade}\n` +
     `💼 *Perfil:* ${perfil}\n` +
     `👥 *Colaboradores:* ${colaboradores}\n\n` +
     `Gostaria de concluir a adesão e receber mais detalhes!`
@@ -86,22 +144,38 @@ window.handleAdesaoSubmit = function(e) {
     modalSuccess.style.cssText = 'display: flex !important; z-index: 999999; opacity: 1; pointer-events: auto;';
   }
 
-  // Limpar formulário
-  const form = document.getElementById('formAdesaoSindicato');
+  // Limpar formulário de forma segura
   if (form) {
     form.reset();
   }
+
+  // Restaurar o botão e a trava após 3 segundos
+  setTimeout(function () {
+    if (btnSubmit) {
+      btnSubmit.disabled = false;
+      btnSubmit.innerHTML = originalBtnHtml || '<i class="fas fa-check-circle"></i> Quero Minha Adesão Agora';
+    }
+    isSubmittingAdesao = false;
+  }, 3000);
 
   return false;
 };
 
 // Função Global de Fechamento do Modal
-window.closeAdesaoModal = function() {
+window.closeAdesaoModal = function () {
   const modalSuccess = document.getElementById('modalSuccessAdesao');
   if (modalSuccess) {
     modalSuccess.classList.remove('active');
     modalSuccess.style.cssText = 'display: none !important;';
   }
+
+  const form = document.getElementById('formAdesaoSindicato');
+  const btnSubmit = form ? form.querySelector('button[type="submit"]') : null;
+  if (btnSubmit && btnSubmit.disabled) {
+    btnSubmit.disabled = false;
+    btnSubmit.innerHTML = '<i class="fas fa-check-circle"></i> Quero Minha Adesão Agora';
+  }
+  isSubmittingAdesao = false;
 };
 
 function initSindicatoPage() {
@@ -141,10 +215,10 @@ function initSindicatoPage() {
     });
   }
 
-  // 3. Vincular Evento de Submit ao Formulário
+  // 3. Vincular Evento de Submit ao Formulário (garantir vínculo único e sem conflitos)
   const formAdesao = document.getElementById('formAdesaoSindicato');
   if (formAdesao) {
-    formAdesao.addEventListener('submit', window.handleAdesaoSubmit);
+    formAdesao.onsubmit = window.handleAdesaoSubmit;
   }
 
   // 4. Fechar Modal em Botão e Overlay
@@ -156,7 +230,7 @@ function initSindicatoPage() {
   }
 
   if (modalSuccess) {
-    modalSuccess.addEventListener('click', function(e) {
+    modalSuccess.addEventListener('click', function (e) {
       if (e.target === modalSuccess) {
         window.closeAdesaoModal();
       }
